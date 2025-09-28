@@ -2,14 +2,14 @@ name: Deploy frontend to S3 + CloudFront
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     # Run only when frontend/ or this workflow changes
     paths:
       - "frontend/**"
       - ".github/workflows/deploy-frontend.yml"
 
 permissions:
-  id-token: write   # Required for GitHub OIDC -> AWS STS
+  id-token: write # Required for GitHub OIDC -> AWS STS
   contents: read
 
 env:
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend   # All shell commands run in frontend/
+        working-directory: frontend # All shell commands run in frontend/
 
     steps:
       # 1) Get your code
@@ -36,6 +36,14 @@ jobs:
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GitHubS3DeployRole
+
+      # Print GitHub context to match your trust policy strings
+      - name: Print GitHub context (for trust policy)
+        run: |
+          echo "github.repository=${{ github.repository }}"
+          echo "github.ref=${{ github.ref }}"
+          echo "github.workflow_ref=${{ github.workflow_ref }}"
+          echo "github.repository_owner=${{ github.repository_owner }}"
 
       # --- Smoke tests: verify identity, S3, CloudFront ---
       - name: Who am I?
@@ -50,7 +58,6 @@ jobs:
             --distribution-id $CF_DISTRIBUTION_ID \
             --paths "/__smoketest_$(date +%s).txt"
       # --- End smoke tests ---
-
       # 3) Upload non-HTML assets with long cache (30 days)
       #    Put your assets under css/, js/, img/, images/, fonts/, assets/ ...
       - name: Upload assets with long cache
