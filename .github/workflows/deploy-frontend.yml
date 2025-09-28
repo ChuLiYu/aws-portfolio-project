@@ -86,10 +86,13 @@ jobs:
       # 6) Invalidate only HTML (fast & free-tier friendly)
       - name: Invalidate CloudFront (HTML only)
         run: |
+          set -e
+          # build paths like "/index.html" "/about.html"
           HTML_PATHS=$(find . -maxdepth 1 -type f -name "*.html" -printf ' "/%f"')
           if [ -z "$HTML_PATHS" ]; then
             HTML_PATHS='"/index.html"'
           fi
+          echo "Invalidating paths:$HTML_PATHS"
           aws cloudfront create-invalidation \
             --distribution-id $CF_DISTRIBUTION_ID \
             --paths $HTML_PATHS
