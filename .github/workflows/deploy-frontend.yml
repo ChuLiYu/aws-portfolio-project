@@ -1,18 +1,23 @@
 name: Deploy frontend to S3 + CloudFront
+
 on:
   push:
     branches: [ main ]
+    # Trigger only when frontend or this workflow changes
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy-frontend.yml"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write   # for OIDC
+      id-token: write   # required for GitHub OIDC → AWS STS
       contents: read
     env:
       AWS_REGION: us-east-1
-      S3_BUCKET: YOUR_S3_BUCKET_NAME
-      CF_DISTRIBUTION_ID: YOUR_CF_DISTRIBUTION_ID
+      S3_BUCKET: aws-portfolio-liyu
+      CF_DISTRIBUTION_ID: EOJPSKY8NNVO2
     steps:
       - uses: actions/checkout@v4
 
@@ -21,13 +26,32 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v5
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/GitHubS3DeployRole
+          role-to-assume: arn:aws:iam::277375108569:role/GitHubS3DeployRole
 
-      - name: Sync to S3
+      # Sync ONLY the frontend directory to S3
+      - name: Sync frontend to S3
         working-directory: frontend
         run: |
-          aws s3 sync . s3://$S3_BUCKET --delete
+          aws s3 sync . s3://$S3_BUCKET \
+            --delete \
+            --exclude ".DS_Store"
 
-      - name: Invalidate CloudFront cache
+      # Precise invalidation: only HTML (faster, stays within free tier)
+      - name: Invalidate CloudFront (HTML only)
         run: |
-          aws cloudfront create-invalidation --distribution-id $CF_DISTRIBUTION_ID --paths "/*"
+          aws cloudfront create-invalidation \
+            --distribution-id $CF_DISTRIBUTION_ID \
+            --paths "/index.html" "/index-chinese.html" "/simple.html" "/tech-style.html"
+
+      # --- OPTIONAL: also invalidate changed assets (CSS/JS/images) in this commit ---
+      # - name: Invalidate CloudFront (changed assets)
+      #   shell: bash
+      #   run: |
+      #     CHANGED=$(git diff --name-only HEAD~1 HEAD | grep -E '^frontend/(assets/|.*\.(css|js))$' || true)
+      #     if [ -n "$CHANGED" ]; then
+      #       # Build path list without the leading 'frontend/'
+      #       PATHS=$(printf ' "%s"' $(echo "$CHANGED" | sed 's#^frontend/#/#'))
+      #       aws cloudfront create-invalidation \
+      #         --distribution-id $CF_DISTRIBUTION_ID \
+      #         --paths $PATHS
+      #     fi
