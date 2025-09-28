@@ -10,7 +10,7 @@ import time
 
 app = Flask(__name__)
 
-# CORS 設定 - 限制允許的來源
+# CORS Configuration - Restrict allowed origins
 allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:8080").split(",")
 CORS(
     app,
@@ -19,27 +19,27 @@ CORS(
     allow_headers=["Content-Type"],
 )
 
-# 設定日誌
+# Logging Configuration
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 msgs = []
 
-# 速率限制設定
+# Rate Limiting Configuration
 RATE_LIMIT_PER_MINUTE = int(os.getenv("RATE_LIMIT_PER_MINUTE", "60"))
 RATE_LIMIT_PER_HOUR = int(os.getenv("RATE_LIMIT_PER_HOUR", "1000"))
 
-# 簡單的記憶體速率限制器
+# Simple in-memory rate limiter
 rate_limiter = defaultdict(lambda: {"minute": deque(), "hour": deque()})
 
 
 def check_rate_limit(ip_address):
-    """檢查速率限制"""
+    """Check rate limiting"""
     current_time = time.time()
     minute_window = current_time - 60
     hour_window = current_time - 3600
 
-    # 清理過期的記錄
+    # Clean expired records
     while (
         rate_limiter[ip_address]["minute"]
         and rate_limiter[ip_address]["minute"][0] < minute_window
@@ -52,14 +52,14 @@ def check_rate_limit(ip_address):
     ):
         rate_limiter[ip_address]["hour"].popleft()
 
-    # 檢查限制
+    # Check limits
     if len(rate_limiter[ip_address]["minute"]) >= RATE_LIMIT_PER_MINUTE:
         return False, "Rate limit exceeded: too many requests per minute"
 
     if len(rate_limiter[ip_address]["hour"]) >= RATE_LIMIT_PER_HOUR:
         return False, "Rate limit exceeded: too many requests per hour"
 
-    # 記錄請求
+    # Record request
     rate_limiter[ip_address]["minute"].append(current_time)
     rate_limiter[ip_address]["hour"].append(current_time)
 
@@ -67,18 +67,18 @@ def check_rate_limit(ip_address):
 
 
 def sanitize_input(text):
-    """清理和驗證輸入，防止 XSS 攻擊"""
+    """Clean and validate input to prevent XSS attacks"""
     if not text or not isinstance(text, str):
         return ""
 
-    # 限制長度
+    # Limit length
     if len(text) > 500:
         text = text[:500]
 
-    # 移除 HTML 標籤和特殊字符
+    # Remove HTML tags and special characters
     text = html.escape(text)
 
-    # 只允許字母、數字、基本標點符號和中文
+    # Only allow letters, numbers, basic punctuation and Chinese characters
     text = re.sub(r"[^\w\s\u4e00-\u9fff.,!?@#$%^&*()_+-=]", "", text)
 
     return text.strip()
@@ -86,9 +86,9 @@ def sanitize_input(text):
 
 @app.get("/api/guestbook")
 def list_msgs():
-    """取得留言列表"""
+    """Get guestbook messages"""
     try:
-        # 檢查速率限制
+        # Check rate limiting
         client_ip = request.environ.get("HTTP_X_FORWARDED_FOR", request.remote_addr)
         if client_ip:
             client_ip = client_ip.split(",")[0].strip()
@@ -106,9 +106,9 @@ def list_msgs():
 
 @app.post("/api/guestbook")
 def add_msg():
-    """新增留言"""
+    """Add guestbook message"""
     try:
-        # 檢查速率限制
+        # Check rate limiting
         client_ip = request.environ.get("HTTP_X_FORWARDED_FOR", request.remote_addr)
         if client_ip:
             client_ip = client_ip.split(",")[0].strip()
@@ -120,12 +120,12 @@ def add_msg():
 
         data = request.get_json(silent=True) or {}
 
-        # 驗證輸入
+        # Validate input
         msg_content = sanitize_input(data.get("msg", ""))
         if not msg_content:
             return jsonify({"error": "Message content is required"}), 400
 
-        # 新增留言
+        # Add message
         new_msg = {
             "msg": msg_content,
             "from": "web",
@@ -135,7 +135,7 @@ def add_msg():
 
         msgs.append(new_msg)
 
-        # 限制留言數量，防止記憶體溢出
+        # Limit message count to prevent memory overflow
         if len(msgs) > 1000:
             msgs.pop(0)
 
@@ -149,31 +149,31 @@ def add_msg():
 
 @app.get("/")
 def health():
-    """健康檢查端點"""
+    """Health check endpoint"""
     return {"ok": True, "timestamp": datetime.utcnow().isoformat()}, 200
 
 
 @app.errorhandler(404)
 def not_found(error):
-    """404 錯誤處理"""
+    """404 error handler"""
     return jsonify({"error": "Not found"}), 404
 
 
 @app.errorhandler(405)
 def method_not_allowed(error):
-    """405 錯誤處理"""
+    """405 error handler"""
     return jsonify({"error": "Method not allowed"}), 405
 
 
 @app.errorhandler(500)
 def internal_error(error):
-    """500 錯誤處理"""
+    """500 error handler"""
     logger.error(f"Internal server error: {error}")
     return jsonify({"error": "Internal server error"}), 500
 
 
 if __name__ == "__main__":
-    # 開發環境設定
+    # Development environment configuration
     debug_mode = os.getenv("FLASK_DEBUG", "False").lower() == "true"
     port = int(os.getenv("FLASK_PORT", 80))
 
@@ -181,6 +181,6 @@ if __name__ == "__main__":
         logger.warning("Running in DEBUG mode - not suitable for production!")
         app.run(host="0.0.0.0", port=port, debug=True)
     else:
-        # 生產環境建議使用 gunicorn
+        # Production environment recommended to use gunicorn
         logger.info("Starting production server...")
         app.run(host="0.0.0.0", port=port, debug=False)
