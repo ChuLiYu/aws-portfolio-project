@@ -87,15 +87,20 @@ jobs:
       - name: Invalidate CloudFront (HTML only)
         run: |
           set -e
-          # build paths like "/index.html" "/about.html"
-          HTML_PATHS=$(find . -maxdepth 1 -type f -name "*.html" -printf ' "/%f"')
-          if [ -z "$HTML_PATHS" ]; then
-            HTML_PATHS='"/index.html"'
+
+          # Collect HTML files as paths like /index.html /about.html (no quotes)
+          mapfile -t HTMLS < <(find . -maxdepth 1 -type f -name "*.html" -printf '/%f\n')
+
+          # Fallback if none found
+          if [ "${#HTMLS[@]}" -eq 0 ]; then
+            HTMLS=(/index.html)
           fi
-          echo "Invalidating paths:$HTML_PATHS"
+
+          echo "Invalidating paths: ${HTMLS[@]}"
+
           aws cloudfront create-invalidation \
-            --distribution-id $CF_DISTRIBUTION_ID \
-            --paths $HTML_PATHS
+            --distribution-id "$CF_DISTRIBUTION_ID" \
+            --paths "${HTMLS[@]}"
 
       - name: Summary
         run: |
