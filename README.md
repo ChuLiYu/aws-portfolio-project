@@ -53,6 +53,8 @@ A modern, production-ready portfolio website featuring AWS cloud deployment, aut
 - **Docker**: Containerization
 - **AWS CLI**: Deployment scripts
 
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -163,6 +165,86 @@ docker run -p 5000:80 portfolio-api
 - `CertificateArn`: SSL certificate ARN (optional)
 - `InstanceType`: EC2 instance type
 
+## 📘 Deployment Notes
+
+This section records key knowledge and pitfalls encountered while setting up automated deployment with **GitHub Actions + AWS S3 + CloudFront**.
+
+### 🔑 Key Knowledge
+
+- **GitHub Actions Workflow**
+  - Defined in `.github/workflows/*.yml`
+  - Triggered via `push` or `workflow_dispatch`
+  - `jobs` consist of ordered steps (commonly: test / build / deploy)
+
+- **OIDC and AWS IAM**
+  - No need to store long-lived `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`
+  - Use **GitHub OIDC provider** to request short-lived AWS credentials
+  - IAM Role trust policy must allow `arn:aws:iam::<account_id>:oidc-provider/token.actions.githubusercontent.com`
+
+- **S3 + CloudFront Deployment Best Practices**
+  - **Static assets (CSS/JS/Images)** → long cache (30 days – 1 year)
+  - **HTML** → `no-cache` so clients always fetch the latest version
+  - **Delete removed files**: `aws s3 sync --delete` to avoid stale files
+  - **CloudFront invalidation**: invalidate only HTML files (`/index.html` etc.) instead of `/*` to save cost
+
+---
+
+### ⚠️ Pitfalls
+
+1. **Workflow file name too strict**
+   - Trust policy restricted with `job_workflow_ref`
+   - Any file rename caused deployment failure
+   - Fix: use `repo:<repo>:ref:refs/heads/main*` for flexibility
+
+2. **OIDC Not Authorized**
+   - Common reasons:
+     - Condition mismatch with `github.workflow_ref`
+     - Forgot to add `id-token: write` in workflow permissions
+     - IAM Role missing `sts:AssumeRoleWithWebIdentity`
+
+3. **CloudFront invalidation format error**
+   - `find` command produced invalid path strings
+   - Fix: ensure paths look like `/file.html` without extra quotes
+
+4. **IAM permissions too broad / too narrow**
+   - Initially granted full S3 permissions → unsafe
+   - Refined to:
+     - `s3:ListBucket`, `s3:GetObject*`, `s3:PutObject*`, `s3:DeleteObject*` (scoped to specific bucket)
+     - `cloudfront:CreateInvalidation` (scoped to specific distribution)
+
+5. **Insufficient debug info**
+   - Without printing GitHub context, IAM policy troubleshooting was hard
+   - Added `echo ${{ github.repository }}` and similar outputs to compare against trust policy
+
+---
+
+### ✅ Final Trust Policy Example
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GitHubOidcTrustRepoMain",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::277375108569:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:repository": "ChuLiYu/aws-portfolio-project"
+        },
+        "StringLike": {
+          "token.actions.githubusercontent.com:sub": "repo:ChuLiYu/aws-portfolio-project:ref:refs/heads/main*"
+        }
+      }
+    }
+  ]
+}
+
+
 ## 📚 Documentation
 
 - [Architecture Overview](docs/ARCHITECTURE.md)
@@ -203,5 +285,7 @@ If you encounter any issues:
 - [ ] Additional cloud service integrations
 
 ---
+
+
 
 **⭐ If this project helps you, please give it a star!**
