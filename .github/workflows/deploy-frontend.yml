@@ -31,13 +31,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2) Assume AWS role via OIDC (no long-lived keys)
-      - name: Configure AWS credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v5
-        with:
-          aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GitHubS3DeployRole
-
       # Print GitHub context to match your trust policy strings
       - name: Print GitHub context (for trust policy)
         run: |
@@ -45,6 +38,13 @@ jobs:
           echo "github.ref=${{ github.ref }}"
           echo "github.workflow_ref=${{ github.workflow_ref }}"
           echo "github.repository_owner=${{ github.repository_owner }}"
+
+      # Assume AWS role via OIDC (no long-lived keys)
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v5
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GitHubS3DeployRole
 
       # --- Smoke tests: verify identity, S3, CloudFront ---
       - name: Who am I?
