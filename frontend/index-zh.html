@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lui Chu — 雲端與分散式系統工程師</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0d1117;
+            --bg-card: #161b22;
+            --bg-hover: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-purple: #a5a5ff;
+            --border-color: #30363d;
+            --border-hover: #58a6ff;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .lang-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .lang-current {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .lang-separator {
+            color: var(--text-muted);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .profile-image-container {
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 32px rgba(88, 166, 255, 0.4);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: 1px solid;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+            border-color: var(--accent-blue);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent-blue);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-green);
+            color: var(--bg-dark);
+        }
+
+        /* Sections */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        /* About Section */
+        .about-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-status {
+            background: var(--accent-green);
+            color: var(--bg-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-hover);
+            color: var(--accent-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: var(--bg-hover);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Code Block Style */
+        .code-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .code-block .comment {
+            color: var(--text-muted);
+        }
+
+        .code-block .keyword {
+            color: var(--accent-purple);
+        }
+
+        .code-block .string {
+            color: var(--accent-green);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 1rem 1.5rem;
+            background: var(--bg-hover);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Lui Chu</a>
+                <div style="display: flex; gap: 2rem; align-items: center;">
+                    <ul class="nav-links">
+                        <li><a href="#about">關於我</a></li>
+                        <li><a href="#projects">專案作品</a></li>
+                        <li><a href="#skills">技術技能</a></li>
+                        <li><a href="#contact">聯絡方式</a></li>
+                    </ul>
+                    <div class="language-switcher">
+                        <a href="index.html" class="lang-link">English</a>
+                        <span class="lang-separator">|</span>
+                        <span class="lang-current">中文</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="profile-image-container">
+                <img src="assets/images/profile/avatar.jpg" alt="Lui Chu 個人照片" class="profile-image">
+            </div>
+            <h1>你好，我是 Lui Chu</h1>
+            <h2 class="job-title">雲端與分散式系統工程師</h2>
+            <p class="subtitle">AWS 認證進行中 | 建構可擴展的雲端基礎設施</p>
+            <p class="description">
+                專精於雲端架構、DevOps 實踐和分散式系統。目前正在準備 AWS Solutions Architect Associate 認證。
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">查看履歷</a>
+                <a href="https://github.com/ChuLiYu" class="btn btn-secondary">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">關於我</h2>
+            <div class="about-content">
+                <p>
+                    我是一位專注於雲端技術和分散式系統的工程師，目前正在準備 AWS Solutions Architect Associate (SAA) 認證。
+                    我熱愛學習新技術，並致力於建構可擴展且安全的雲端解決方案。
+                </p>
+                <p>
+                    我的專業領域包括 AWS 服務、容器化技術、微服務架構，以及雲端安全最佳實踐。
+                    擅長使用 Infrastructure as Code 來管理雲端資源，並注重成本優化和效能調校。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">專案作品</h2>
+            <p class="section-subtitle">
+                實際的雲端解決方案，展現架構設計、安全性和成本優化能力
+            </p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">作品集網站</h3>
+                        </div>
+                        <span class="project-status">上線中</span>
+                    </div>
+                    <p class="project-description">
+                        現代化作品集網站，部署於 AWS S3 並使用 CloudFront CDN 和 Origin Access Control (OAC)。
+                        展現靜態網站託管、全球內容分發和安全最佳實踐。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">CloudFront</span>
+                        <span class="tech-tag">OAC</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">OIDC</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#">🌐 線上展示</a>
+                        <a href="#">📁 GitHub 倉庫</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">RESTful API 服務</h3>
+                        </div>
+                        <span class="project-status">上線中</span>
+                    </div>
+                    <p class="project-description">
+                        可擴展的 Flask API，部署於 EC2 並具備自動化 CI/CD 流程。
+                        提供留言板功能，包含適當的錯誤處理、監控和安全群組配置。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">EC2</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Security Groups</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#">📚 API 文件</a>
+                        <a href="#">📁 GitHub 倉庫</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">基礎設施即代碼</h3>
+                        </div>
+                        <span class="project-status">模板</span>
+                    </div>
+                    <p class="project-description">
+                        使用 CloudFormation 模板定義的完整 AWS 基礎設施。
+                        包含 VPC、安全群組、IAM 角色，以及具備最小權限原則的自動化資源配置。
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">CloudFormation</span>
+                        <span class="tech-tag">IAM</span>
+                        <span class="tech-tag">VPC</span>
+                        <span class="tech-tag">Security</span>
+                        <span class="tech-tag">Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#">📋 模板</a>
+                        <a href="#">📁 GitHub 倉庫</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture Code Block -->
+            <div class="code-block">
+                <div class="comment"># 此網站架構</div>
+                <div class="keyword">S3</div> <span class="string">"portfolio-bucket"</span> {
+                <div class="comment"> # 私有儲存桶配合 OAC</div>
+                <div class="keyword"> PublicAccessBlock</div>: <span class="string">"BlockAll"</span>
+                <div class="keyword"> OriginAccessControl</div>: <span class="string">"Enabled"</span>
+                }
+                <br>
+                <div class="keyword">CloudFront</div> <span class="string">"distribution"</span> {
+                <div class="comment"> # 全球 CDN 配合 HTTPS</div>
+                <div class="keyword"> Origin</div>: <span class="string">"S3-OAC"</span>
+                <div class="keyword"> ViewerProtocolPolicy</div>: <span class="string">"redirect-to-https"</span>
+                }
+                <br>
+                <div class="comment"># 成本：約 $0/月 (免費方案)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">技術專長</h2>
+            <p class="section-subtitle">
+                專注於雲端技術、基礎設施自動化和分散式系統
+            </p>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>雲端平台</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">AWS (S3, EC2, VPC, IAM, CloudFront)</span>
+                        <span class="skill-item">Lambda</span>
+                        <span class="skill-item">Route 53</span>
+                        <span class="skill-item">CloudFormation</span>
+                        <span class="skill-item">CloudWatch</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps 與自動化</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Terraform</span>
+                        <span class="skill-item">CI/CD 流程</span>
+                        <span class="skill-item">基礎設施即代碼</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>分散式系統</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">微服務架構</span>
+                        <span class="skill-item">負載平衡</span>
+                        <span class="skill-item">一致性雜湊</span>
+                        <span class="skill-item">CAP 定理</span>
+                        <span class="skill-item">系統設計</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact">
+                <h2 class="section-title">聯絡我</h2>
+                <p class="section-subtitle">
+                    準備討論雲端解決方案、基礎設施挑戰或新的機會
+                </p>
+
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        <span>📧</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/ChuLiYu" class="contact-link">
+                        <span>🐙</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" class="contact-link">
+                        <span>💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Lui Chu. 使用 AWS S3 + CloudFront + OAC 建構</p>
+        </div>
+    </footer>
+</body>
+
+</html>
