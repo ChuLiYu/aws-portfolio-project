@@ -227,6 +227,25 @@
       max-width: 600px;
     }
 
+    /* About Section */
+    .about-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
     /* Projects Grid */
     .projects-grid {
       display: grid;
@@ -263,13 +282,28 @@
       margin-bottom: 0.5rem;
     }
 
-    .project-status {
-      background: var(--accent-green);
-      color: var(--bg-dark);
+    .project-status-live,
+    .project-status-building,
+    .project-status-todo {
       padding: 0.25rem 0.75rem;
       border-radius: 12px;
       font-size: 0.8rem;
       font-weight: 500;
+    }
+
+    .project-status-live {
+      background: var(--accent-green);
+      color: var(--bg-dark);
+    }
+
+    .project-status-building {
+      background: var(--accent-blue);
+      color: var(--bg-dark);
+    }
+
+    .project-status-todo {
+      background: var(--text-muted);
+      color: var(--text-primary);
     }
 
     .project-description {
@@ -456,6 +490,7 @@
         <a href="#" class="logo">Lui Chu</a>
         <div style="display: flex; gap: 2rem; align-items: center;">
           <ul class="nav-links">
+            <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -490,6 +525,26 @@
     </div>
   </section>
 
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p>
+          I am a cloud technology and distributed systems engineer, currently preparing for AWS Solutions Architect
+          Associate (SAA) certification.
+          I love learning new technologies and am committed to building scalable and secure cloud solutions.
+        </p>
+        <p>
+          My expertise includes AWS services, containerization technologies, microservices architecture, and cloud
+          security best practices.
+          I specialize in using Infrastructure as Code to manage cloud resources, with a focus on cost optimization and
+          performance tuning.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="projects" class="section">
     <div class="container">
@@ -504,7 +559,7 @@
             <div>
               <h3 class="project-title">Portfolio Website</h3>
             </div>
-            <span class="project-status">Live</span>
+            <span class="project-status-live">Live</span>
           </div>
           <p class="project-description">
             Modern portfolio deployed on AWS S3 with CloudFront CDN and Origin Access Control (OAC).
@@ -528,7 +583,7 @@
             <div>
               <h3 class="project-title">RESTful API Service</h3>
             </div>
-            <span class="project-status">Live</span>
+            <span class="project-status-building">Building</span>
           </div>
           <p class="project-description">
             Scalable Flask API deployed on EC2 with automated CI/CD pipeline.
@@ -552,7 +607,7 @@
             <div>
               <h3 class="project-title">Infrastructure as Code</h3>
             </div>
-            <span class="project-status">Template</span>
+            <span class="project-status-building">Building</span>
           </div>
           <p class="project-description">
             Complete AWS infrastructure defined using CloudFormation templates.
@@ -647,7 +702,7 @@
         </p>
 
         <div class="contact-links">
-          <a href="mailto:your.email@example.com" class="contact-link">
+          <a href="mailto:liyu.chu.work@gmail.com" class="contact-link">
             <span>📧</span>
             <span>Email</span>
           </a>
@@ -655,7 +710,7 @@
             <span>🐙</span>
             <span>GitHub</span>
           </a>
-          <a href="#" class="contact-link">
+          <a href="https://www.linkedin.com/in/chuliyu/" class="contact-link">
             <span>💼</span>
             <span>LinkedIn</span>
           </a>

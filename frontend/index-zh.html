@@ -281,13 +281,31 @@
             margin-bottom: 0.5rem;
         }
 
-        .project-status {
-            background: var(--accent-green);
-            color: var(--bg-dark);
+        .project-status-live,
+        .project-status-building,
+        .project-status-todo {
             padding: 0.25rem 0.75rem;
             border-radius: 12px;
             font-size: 0.8rem;
             font-weight: 500;
+        }
+
+        .project-status-live {
+            background: var(--accent-green);
+            color: var(--bg-dark);
+        }
+
+        .project-status-building {
+            background: var(--accent-blue);
+            /* 建設中 */
+            color: var(--bg-dark);
+        }
+
+        .project-status-todo {
+            background: var(--text-muted);
+            /* 待辦 */
+            color: var(--text-primary);
+            /* 調整文字顏色以確保對比度 */
         }
 
         .project-description {
@@ -539,7 +557,7 @@
                         <div>
                             <h3 class="project-title">作品集網站</h3>
                         </div>
-                        <span class="project-status">上線中</span>
+                        <span class="project-status-live">上線中</span>
                     </div>
                     <p class="project-description">
                         現代化作品集網站，部署於 AWS S3 並使用 CloudFront CDN 和 Origin Access Control (OAC)。
@@ -554,7 +572,7 @@
                     </div>
                     <div class="project-links">
                         <a href="#">🌐 線上展示</a>
-                        <a href="#">📁 GitHub 倉庫</a>
+                        <a href="https://github.com/ChuLiYu/aws-portfolio-project/">📁 GitHub 倉庫</a>
                     </div>
                 </div>
 
@@ -563,7 +581,7 @@
                         <div>
                             <h3 class="project-title">RESTful API 服務</h3>
                         </div>
-                        <span class="project-status">上線中</span>
+                        <span class="project-status-building">建設中</span>
                     </div>
                     <p class="project-description">
                         可擴展的 Flask API，部署於 EC2 並具備自動化 CI/CD 流程。
@@ -587,7 +605,7 @@
                         <div>
                             <h3 class="project-title">基礎設施即代碼</h3>
                         </div>
-                        <span class="project-status">模板</span>
+                        <span class="project-status-building">建設中</span>
                     </div>
                     <p class="project-description">
                         使用 CloudFormation 模板定義的完整 AWS 基礎設施。
@@ -682,7 +700,7 @@
                 </p>
 
                 <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-link">
+                    <a href="mailto:liyu.chu.work@gmail.com" class="contact-link">
                         <span>📧</span>
                         <span>Email</span>
                     </a>
@@ -690,7 +708,7 @@
                         <span>🐙</span>
                         <span>GitHub</span>
                     </a>
-                    <a href="#" class="contact-link">
+                    <a href="https://www.linkedin.com/in/chuliyu/" class="contact-link">
                         <span>💼</span>
                         <span>LinkedIn</span>
                     </a>
