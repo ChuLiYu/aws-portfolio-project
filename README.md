@@ -31,17 +31,20 @@ A modern, production-ready portfolio website featuring AWS cloud deployment, aut
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - HTML5, CSS3
 - Responsive design
 - Multiple page themes
 
 ### Backend
+
 - Python 3.11
 - Flask framework
 - Gunicorn WSGI server
 - Rate limiting & CORS protection
 
 ### Cloud Services
+
 - **AWS S3**: Static website hosting
 - **AWS CloudFront**: CDN and caching
 - **AWS EC2**: API server
@@ -49,35 +52,39 @@ A modern, production-ready portfolio website featuring AWS cloud deployment, aut
 - **AWS CloudWatch**: Monitoring and logging
 
 ### DevOps
+
 - **GitHub Actions**: CI/CD automation
 - **Docker**: Containerization
 - **AWS CLI**: Deployment scripts
 
-
-
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - AWS account
 - GitHub account
 - AWS CLI installed
 - Git installed
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/aws-portfolio-project.git
 cd aws-portfolio-project
 ```
 
 ### 2. Configure AWS Credentials
+
 ```bash
 aws configure
 ```
 
 ### 3. Set Up GitHub Secrets
+
 Refer to [GitHub Secrets Guide](docs/GITHUB_SECRETS_GUIDE.md)
 
 ### 4. Deploy to AWS
+
 ```bash
 # Using automated script
 ./scripts/deploy.sh --bucket your-unique-bucket-name
@@ -130,6 +137,7 @@ aws-portfolio-project/
 ## 🧪 Testing
 
 ### Local Testing
+
 ```bash
 cd api
 pip install -r requirements.txt
@@ -137,6 +145,7 @@ python test_app.py
 ```
 
 ### Docker Testing
+
 ```bash
 cd api
 docker build -t portfolio-api .
@@ -153,6 +162,7 @@ docker run -p 5000:80 portfolio-api
 ## 🔧 Configuration
 
 ### Environment Variables
+
 - `FLASK_ENV`: Execution environment (development/production)
 - `FLASK_DEBUG`: Debug mode
 - `ALLOWED_ORIGINS`: CORS allowed origins
@@ -160,6 +170,7 @@ docker run -p 5000:80 portfolio-api
 - `RATE_LIMIT_PER_HOUR`: Requests per hour limit
 
 ### CloudFormation Parameters
+
 - `BucketName`: S3 bucket name
 - `DomainName`: Custom domain (optional)
 - `CertificateArn`: SSL certificate ARN (optional)
@@ -172,11 +183,13 @@ This section records key knowledge and pitfalls encountered while setting up aut
 ### 🔑 Key Knowledge
 
 - **GitHub Actions Workflow**
+
   - Defined in `.github/workflows/*.yml`
   - Triggered via `push` or `workflow_dispatch`
   - `jobs` consist of ordered steps (commonly: test / build / deploy)
 
 - **OIDC and AWS IAM**
+
   - No need to store long-lived `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`
   - Use **GitHub OIDC provider** to request short-lived AWS credentials
   - IAM Role trust policy must allow `arn:aws:iam::<account_id>:oidc-provider/token.actions.githubusercontent.com`
@@ -192,21 +205,25 @@ This section records key knowledge and pitfalls encountered while setting up aut
 ### ⚠️ Pitfalls
 
 1. **Workflow file name too strict**
+
    - Trust policy restricted with `job_workflow_ref`
    - Any file rename caused deployment failure
    - Fix: use `repo:<repo>:ref:refs/heads/main*` for flexibility
 
 2. **OIDC Not Authorized**
+
    - Common reasons:
      - Condition mismatch with `github.workflow_ref`
      - Forgot to add `id-token: write` in workflow permissions
      - IAM Role missing `sts:AssumeRoleWithWebIdentity`
 
 3. **CloudFront invalidation format error**
+
    - `find` command produced invalid path strings
    - Fix: ensure paths look like `/file.html` without extra quotes
 
 4. **IAM permissions too broad / too narrow**
+
    - Initially granted full S3 permissions → unsafe
    - Refined to:
      - `s3:ListBucket`, `s3:GetObject*`, `s3:PutObject*`, `s3:DeleteObject*` (scoped to specific bucket)
@@ -252,6 +269,7 @@ This section records key knowledge and pitfalls encountered while setting up aut
 - [Security Guidelines](docs/SECURITY.md)
 - [GitHub Secrets Guide](docs/GITHUB_SECRETS_GUIDE.md)
 - [Security Checklist](docs/SECURITY_CHECKLIST.md)
+- [DNS and CloudFront Migration](docs/DNS_CLOUDFRONT_MIGRATION.md)
 
 ## 🤝 Contributing
 
@@ -289,3 +307,4 @@ If you encounter any issues:
 
 
 **⭐ If this project helps you, please give it a star!**
+```
