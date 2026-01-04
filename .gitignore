@@ -19,3 +19,34 @@ ehthumbs.db
 
 # Logs
 *.log
+
+# Sensitive files
+*.pem
+*.key
+*.env
+*.env.*
+!*.env.example
+.env.local
+.env.production
+.env.staging
+
+# Terraform
+terraform.tfvars
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# AWS
+.aws/
+credentials
+config
+
+# Cloudflare
+.cloudflare/
+
+# SSH Keys
+id_rsa
+id_rsa.pub
+*.ppk
