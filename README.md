@@ -139,6 +139,7 @@ Then open \`http://localhost:8000\` in your browser.
 ## 📚 Documentation
 
 - [GitHub Pages Migration Guide](docs/GITHUB_PAGES_MIGRATION.md)
+- [DNS Configuration with Terraform](dns-terraform/README.md)
 
 ## 🤝 Contributing
 

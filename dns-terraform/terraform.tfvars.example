@@ -1,0 +1,9 @@
+# terraform.tfvars.example
+# Copy this to terraform.tfvars and fill in your values
+
+# Get API Token from: https://dash.cloudflare.com/profile/api-tokens
+# Permissions needed: Zone.DNS (Edit)
+cloudflare_api_token = "your-cloudflare-api-token-here"
+
+# Get Zone ID from: Cloudflare Dashboard → luichu.dev → Overview (right sidebar)
+zone_id = "your-zone-id-here"

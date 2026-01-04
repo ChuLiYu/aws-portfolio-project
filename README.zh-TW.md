@@ -111,7 +111,12 @@ aws-portfolio-project/
 │   ├── simple.html             # 簡約主題
 │   ├── tech-style.html         # 科技主題
 │   ├── styles.css              # 樣式表
-│   └── assets/                 # 靜態資源（圖片等）
+│   ├── assets/                 # 靜態資源（圖片等）
+│   └── CNAME                   # 自訂網域設定
+├── dns-terraform/              # DNS Terraform 配置
+│   ├── main.tf                 # Cloudflare DNS 記錄
+│   ├── terraform.tfvars.example # 配置範本
+│   └── README.md               # DNS 設定指南
 ├── docs/
 │   └── GITHUB_PAGES_MIGRATION.md  # 遷移指南
 └── README.md
