@@ -1,164 +1,166 @@
 # 🚀 Portfolio Website
 
-> 🌐 **Live Site**: [https://luichu.dev/](https://luichu.dev/)
+> 🌐 **Live Site**: [https://luichu.dev/](https://luichu.dev/)  
+> 📖 **中文版**: [README.zh-TW.md](README.zh-TW.md)
 
-個人作品集網站，使用 GitHub Pages 託管，具備自動部署功能。
+Personal portfolio website hosted on GitHub Pages with automated deployment.
 
-## ✨ 特色
+## ✨ Features
 
-- 🌐 **響應式設計**: 適配各種螢幕尺寸
-- 🚀 **自動部署**: 推送即上線（GitHub Actions）
-- 🆓 **免費託管**: GitHub Pages 零成本
-- 🔒 **自動 HTTPS**: 內建 SSL/TLS 加密
-- 🎨 **多種主題**: 不同頁面風格可選
+- 🌐 **Responsive Design**: Adapts to all screen sizes
+- 🚀 **Auto Deployment**: Push to deploy via GitHub Actions
+- 🆓 **Free Hosting**: Zero cost with GitHub Pages
+- 🔒 **Auto HTTPS**: Built-in SSL/TLS encryption
+- 🎨 **Multiple Themes**: Different page styles available
 
-## 🏗️ 架構
+## 🏗️ Architecture
 
-```
+\`\`\`
 ┌──────────────────┐
 │   GitHub Pages   │
 │                  │
-│  • 靜態網站      │
-│  • 免費 HTTPS    │
-│  • 自動部署      │
+│  • Static Site   │
+│  • Free HTTPS    │
+│  • Auto Deploy   │
 └──────────────────┘
          ▲
-         │ 推送 master 分支
+         │ Push to master
          │
 ┌────────┴─────────┐
 │ GitHub Actions   │
 │                  │
-│ • 自動建置       │
-│ • 自動部署       │
+│ • Auto Build     │
+│ • Auto Deploy    │
 └──────────────────┘
-```
+\`\`\`
 
-## 🛠️ 技術棧
+## 🛠️ Tech Stack
 
-### 前端
+### Frontend
 - HTML5, CSS3, JavaScript
-- 響應式設計
-- 多種頁面主題
+- Responsive design
+- Multiple page themes
 
-### 部署
-- **GitHub Pages**: 免費靜態網站託管
-- **GitHub Actions**: 自動化 CI/CD
-- **HTTPS**: 自動 SSL/TLS 加密
+### Deployment
+- **GitHub Pages**: Free static site hosting
+- **GitHub Actions**: Automated CI/CD pipeline
+- **HTTPS**: Automatic SSL/TLS encryption
 
-## 🚀 快速開始
+## 🚀 Quick Start
 
-### 前置需求
+### Prerequisites
 
-- GitHub 帳號
-- Git 已安裝
+- GitHub account
+- Git installed
 
-### 1. Fork/Clone 專案
+### 1. Fork/Clone the Repository
 
-```bash
+\`\`\`bash
 git clone https://github.com/YOUR_USERNAME/aws-portfolio-project.git
 cd aws-portfolio-project
-```
+\`\`\`
 
-### 2. 啟用 GitHub Pages
+### 2. Enable GitHub Pages
 
-1. 前往專案的 **Settings** → **Pages**
-2. 在 **Source** 選擇 **GitHub Actions**
-3. 儲存設定
+1. Go to **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Save settings
 
-### 3. 自訂內容
+### 3. Customize Content
 
-編輯 `frontend/` 目錄下的檔案：
-- [frontend/index.html](frontend/index.html) - 主頁內容
-- [frontend/styles.css](frontend/styles.css) - 樣式
-- [frontend/assets/](frontend/assets/) - 圖片和媒體
+Edit files in the \`frontend/\` directory:
+- [frontend/index.html](frontend/index.html) - Main page content
+- [frontend/styles.css](frontend/styles.css) - Styling
+- [frontend/assets/](frontend/assets/) - Images and media
 
-### 4. 部署（自動）
+### 4. Deploy (Automatic)
 
-推送到 master 分支即可：
+Simply push to the master branch:
 
-```bash
+\`\`\`bash
 git add .
-git commit -m "更新作品集"
+git commit -m "Update portfolio"
 git push origin master
-```
+\`\`\`
 
-GitHub Actions 會自動部署到：
-```
+GitHub Actions will automatically deploy to:
+\`\`\`
 https://YOUR_USERNAME.github.io/aws-portfolio-project/
-```
+\`\`\`
 
-### 5. 自訂網域（選用）
+### 5. Custom Domain (Optional)
 
-1. 在 `frontend/` 建立 `CNAME` 檔案：
-   ```
+1. Create \`frontend/CNAME\` file with your domain:
+   \`\`\`
    www.yoursite.com
-   ```
+   \`\`\`
 
-2. 在 DNS 供應商設定 CNAME 記錄：
-   ```
+2. Configure DNS CNAME record with your provider:
+   \`\`\`
    CNAME  www  YOUR_USERNAME.github.io
-   ```
+   \`\`\`
 
-## 📁 專案結構
+## 📁 Project Structure
 
-```
+\`\`\`
 aws-portfolio-project/
 ├── .github/workflows/
-│   └── deploy-pages.yml        # GitHub Actions 自動部署
-├── frontend/                   # 靜態網站檔案
-│   ├── index.html              # 主頁
-│   ├── index-zh.html           # 中文版
-│   ├── simple.html             # 簡約主題
-│   ├── tech-style.html         # 科技主題
-│   ├── styles.css              # 樣式表
-│   └── assets/                 # 靜態資源（圖片等）
+│   └── deploy-pages.yml        # GitHub Actions auto-deployment
+├── frontend/                   # Static website files
+│   ├── index.html              # Main page
+│   ├── index-zh.html           # Chinese version
+│   ├── simple.html             # Simple theme
+│   ├── tech-style.html         # Tech theme
+│   ├── styles.css              # Stylesheet
+│   └── assets/                 # Static assets (images, etc.)
 ├── docs/
-│   └── GITHUB_PAGES_MIGRATION.md  # 遷移指南
-└── README.md
-```
+│   └── GITHUB_PAGES_MIGRATION.md  # Migration guide
+├── README.md                   # This file (English)
+└── README.zh-TW.md             # Chinese version
+\`\`\`
 
-## 🔧 本地預覽
+## 🔧 Local Preview
 
-使用任何本地伺服器預覽網站：
+Preview the website using any local server:
 
-```bash
-# 使用 Python
+\`\`\`bash
+# Using Python
 cd frontend
 python3 -m http.server 8000
 
-# 或使用 PHP
+# Or using PHP
 php -S localhost:8000
 
-# 或使用 VS Code Live Server 擴充功能
-```
+# Or using VS Code Live Server extension
+\`\`\`
 
-然後在瀏覽器開啟 `http://localhost:8000`
+Then open \`http://localhost:8000\` in your browser.
 
-## 📚 說明文件
+## 📚 Documentation
 
-- [GitHub Pages 遷移指南](docs/GITHUB_PAGES_MIGRATION.md)
+- [GitHub Pages Migration Guide](docs/GITHUB_PAGES_MIGRATION.md)
 
-## 🤝 貢獻
+## 🤝 Contributing
 
-歡迎貢獻！請隨時提交 Issue 或 Pull Request。
+Contributions are welcome! Feel free to submit Issues or Pull Requests.
 
-### 開發流程
-1. Fork 專案
-2. 建立功能分支
-3. 提交變更
-4. 建立 Pull Request
+### Development Workflow
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Create a Pull Request
 
-## 📄 授權
+## 📄 License
 
 MIT License
 
-## 🆘 支援
+## 🆘 Support
 
-如果遇到問題：
+If you encounter any issues:
 
-1. 查看 [遷移指南](docs/GITHUB_PAGES_MIGRATION.md)
-2. 提交 [Issue](https://github.com/YOUR_USERNAME/aws-portfolio-project/issues)
+1. Check the [Migration Guide](docs/GITHUB_PAGES_MIGRATION.md)
+2. Submit an [Issue](https://github.com/YOUR_USERNAME/aws-portfolio-project/issues)
 
 ---
 
-**⭐ 如果這個專案對你有幫助，請給個星星！**
+**⭐ If this project helps you, please give it a star!**
