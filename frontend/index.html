@@ -5,7 +5,7 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lui Chu — Cloud & Distributed Systems Engineer</title>
+  <title>Lui Chu — MLOps & Machine Learning Engineer</title>
   <style>
     * {
       margin: 0;
@@ -496,6 +496,8 @@
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div class="language-switcher">
@@ -514,12 +516,12 @@
       <div class="profile-image-container">
         <img src="assets/images/profile/avatar.jpg" alt="Lui Chu Profile Photo" class="profile-image">
       </div>
-      <h1>Hi, I'm Lui Chu</h1>
-      <h2 class="job-title">Cloud & Distributed Systems Engineer</h2>
-      <p class="subtitle">AWS Certified (in progress) | Building scalable cloud infrastructure</p>
+      <h1>Hi, I'm Li-Yu Chu</h1>
+      <h2 class="job-title">AWS Certified Software Engineer</h2>
+      <p class="subtitle">M.S. in Computer Science | MLOps & Cloud Infrastructure Specialist</p>
       <p class="description">
-        Specialized in cloud architecture, DevOps practices, and distributed systems.
-        Currently pursuing AWS Solutions Architect Associate certification.
+        AWS Certified Solutions Architect & Terraform Associate specializing in Cloud Infrastructure (IaC), Backend Architecture, and MLOps.
+        Passionate about bridging Data Science and Infrastructure to deliver scalable, production-grade ML systems.
       </p>
       <div class="cta-buttons">
         <a href="#contact" class="btn btn-primary">View Resume</a>
@@ -534,15 +536,21 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
         <p>
-          I am a cloud technology and distributed systems engineer, currently preparing for AWS Solutions Architect
-          Associate (SAA) certification.
-          I love learning new technologies and am committed to building scalable and secure cloud solutions.
+          I am an AWS Certified Software Engineer and M.S. in Computer Science candidate at Fairleigh Dickinson University,
+          specializing in Cloud Infrastructure, MLOps, and Backend Architecture. With proven expertise in building scalable,
+          production-grade platforms using Go, Python, and Terraform, I excel at bridging the gap between Data Science and
+          Infrastructure to deliver reliable, high-performance systems.
         </p>
         <p>
-          My expertise includes AWS services, containerization technologies, microservices architecture, and cloud
-          security best practices.
-          I specialize in using Infrastructure as Code to manage cloud resources, with a focus on cost optimization and
-          performance tuning.
+          My technical experience spans serverless architectures (AWS Lambda, DynamoDB), distributed systems engineering (Go),
+          and MLOps practices including model deployment, monitoring, and automation. I've successfully built event-driven
+          backends handling high-concurrency ML inference endpoints, engineered fault-tolerant distributed job engines for
+          large-scale ML workloads, and implemented comprehensive IaC solutions with Terraform for reproducible environments.
+        </p>
+        <p>
+          Previously at HiTrust Inc., I developed secure microservices for financial systems handling millions of requests,
+          optimized data-heavy workloads by 30%, and managed Kubernetes deployments. I'm passionate about creating robust
+          infrastructure that enables data scientists to deploy and scale ML models efficiently in production.
         </p>
       </div>
     </div>
@@ -553,99 +561,122 @@
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">
-        Real-world cloud solutions demonstrating architecture, security, and cost optimization
+        Production systems demonstrating cloud architecture, distributed systems, and backend engineering
       </p>
 
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-header">
             <div>
-              <h3 class="project-title">Portfolio Website</h3>
+              <h3 class="project-title">Chainy | Enterprise Serverless Infrastructure</h3>
             </div>
             <span class="project-status-live">Live</span>
           </div>
           <p class="project-description">
-            Modern portfolio deployed on AWS S3 with CloudFront CDN and Origin Access Control (OAC).
-            Demonstrates static site hosting, global content delivery, and security best practices.
+            Architected a secure, event-driven backend using AWS Lambda and DynamoDB, designed for high-concurrency
+            requests with sub-millisecond latency. Managed 100% of cloud resources via Terraform with modular IaC 
+            for Dev/Prod environments and automated drift detection.
           </p>
           <div class="project-tech">
-            <span class="tech-tag">S3</span>
-            <span class="tech-tag">CloudFront</span>
-            <span class="tech-tag">OAC</span>
+            <span class="tech-tag">AWS Lambda</span>
+            <span class="tech-tag">DynamoDB</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">AWS WAF</span>
             <span class="tech-tag">GitHub Actions</span>
-            <span class="tech-tag">OIDC</span>
           </div>
           <div class="project-links">
-            <a href="#">🌐 Live Demo</a>
-            <a href="#">📁 GitHub Repo</a>
+            <a href="https://chainy.luichu.dev">🌐 Live Demo</a>
+            <a href="https://github.com/ChuLiYu/chainy-backend">📁 GitHub Repo</a>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-header">
             <div>
-              <h3 class="project-title">RESTful API Service</h3>
+              <h3 class="project-title">Raft-Recovery | Distributed Job Queue Engine</h3>
             </div>
-            <span class="project-status-building">Building</span>
+            <span class="project-status-building">Phase 1 Complete</span>
           </div>
           <p class="project-description">
-            Scalable Flask API deployed on EC2 with automated CI/CD pipeline.
-            Features guestbook functionality with proper error handling, monitoring, and security groups.
+            Engineered a high-throughput distributed job engine in Go, optimized for managing large-scale machine learning
+            workloads and real-time data processing tasks. Utilized Goroutines and Channels to handle concurrent model 
+            inference requests with thread safety. Implemented Write-Ahead Log (WAL) for fault-tolerant task persistence 
+            and seamless recovery.
           </p>
           <div class="project-tech">
-            <span class="tech-tag">EC2</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Security Groups</span>
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">Raft Consensus</span>
+            <span class="tech-tag">Distributed Systems</span>
+            <span class="tech-tag">WAL</span>
+            <span class="tech-tag">Concurrency</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ChuLiYu/raft-recovery">📚 Documentation</a>
+            <a href="https://github.com/ChuLiYu/raft-recovery">📁 GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Cloud Portfolio Platform with FastAPI</h3>
+            </div>
+            <span class="project-status-live">Live</span>
+          </div>
+          <p class="project-description">
+            Production cloud infrastructure featuring FastAPI backend with automatic OpenAPI documentation, deployed on 
+            EC2 with CloudFront CDN. Implements rate limiting, input sanitization, and comprehensive monitoring via 
+            CloudWatch. Full CI/CD pipeline with GitHub Actions and Infrastructure as Code using Terraform.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">FastAPI</span>
             <span class="tech-tag">Python</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">EC2</span>
+            <span class="tech-tag">CloudFront</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">GitHub Actions</span>
           </div>
           <div class="project-links">
-            <a href="#">📚 API Docs</a>
-            <a href="#">📁 GitHub Repo</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div>
-              <h3 class="project-title">Infrastructure as Code</h3>
-            </div>
-            <span class="project-status-building">Building</span>
-          </div>
-          <p class="project-description">
-            Complete AWS infrastructure defined using CloudFormation templates.
-            Includes VPC, security groups, IAM roles, and automated resource provisioning with least privilege access.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">CloudFormation</span>
-            <span class="tech-tag">IAM</span>
-            <span class="tech-tag">VPC</span>
-            <span class="tech-tag">Security</span>
-            <span class="tech-tag">Automation</span>
-          </div>
-          <div class="project-links">
-            <a href="#">📋 Template</a>
-            <a href="#">📁 GitHub Repo</a>
+            <a href="https://luichu.dev">🌐 Live Site</a>
+            <a href="https://luichu.dev/docs">📚 API Docs</a>
+            <a href="https://github.com/ChuLiYu/aws-portfolio-project">📁 GitHub Repo</a>
           </div>
         </div>
       </div>
 
       <!-- Architecture Code Block -->
       <div class="code-block">
-        <div class="comment"># This website architecture</div>
-        <div class="keyword">S3</div> <span class="string">"portfolio-bucket"</span> {
-        <div class="comment"> # Private bucket with OAC</div>
-        <div class="keyword"> PublicAccessBlock</div>: <span class="string">"BlockAll"</span>
-        <div class="keyword"> OriginAccessControl</div>: <span class="string">"Enabled"</span>
+        <div class="comment"># Cloud Infrastructure Architecture</div>
+        <div class="keyword">resource</div> <span class="string">"aws_s3_bucket" "portfolio"</span> {
+        <div class="comment"> # Static website hosting</div>
+        <div class="keyword"> bucket</div> = <span class="string">"portfolio-frontend"</span>
+        <div class="keyword"> tags</div> = { <span class="string">Environment = "production"</span> }
         }
         <br>
-        <div class="keyword">CloudFront</div> <span class="string">"distribution"</span> {
-        <div class="comment"> # Global CDN with HTTPS</div>
-        <div class="keyword"> Origin</div>: <span class="string">"S3-OAC"</span>
-        <div class="keyword"> ViewerProtocolPolicy</div>: <span class="string">"redirect-to-https"</span>
+        <div class="keyword">resource</div> <span class="string">"aws_instance" "api_server"</span> {
+        <div class="comment"> # FastAPI backend on EC2</div>
+        <div class="keyword"> ami</div> = <span class="string">data.aws_ami.amazon_linux_2023.id</span>
+        <div class="keyword"> instance_type</div> = <span class="string">"t3.micro"</span>
+        <div class="keyword"> vpc_security_group_ids</div> = [<span class="string">aws_security_group.api.id</span>]
         }
         <br>
-        <div class="comment"># Cost: ~$0/month (Free Tier)</div>
+        <div class="keyword">FastAPI</div> <span class="string">"guestbook-api"</span> {
+        <div class="comment"> # High-performance async API</div>
+        <div class="keyword"> Framework</div>: <span class="string">"FastAPI + Uvicorn"</span>
+        <div class="keyword"> Validation</div>: <span class="string">"Pydantic models"</span>
+        <div class="keyword"> Docs</div>: <span class="string">"Auto-generated OpenAPI/Swagger"</span>
+        <div class="keyword"> Security</div>: <span class="string">"Rate limiting + XSS protection"</span>
+        }
+        <br>
+        <div class="keyword">Terraform</div> <span class="string">"chainy-infrastructure"</span> {
+        <div class="comment"> # Serverless backend IaC</div>
+        <div class="keyword"> Lambda</div>: <span class="string">"Event-driven functions"</span>
+        <div class="keyword"> DynamoDB</div>: <span class="string">"NoSQL data persistence"</span>
+        <div class="keyword"> Environments</div>: <span class="string">"Dev/Staging/Prod isolation"</span>
+        }
+        <br>
+        <div class="comment"># Cost: ~$15/month (EC2 t3.micro + S3 + CloudFront)</div>
       </div>
     </div>
   </section>
@@ -655,40 +686,152 @@
     <div class="container">
       <h2 class="section-title">Technical Expertise</h2>
       <p class="section-subtitle">
-        Focused on cloud technologies, infrastructure automation, and distributed systems
+        Cloud Infrastructure (IaC) • Backend Engineering • Distributed Systems • DevOps
       </p>
 
       <div class="skills-grid">
         <div class="skill-category">
-          <h3>Cloud Platforms</h3>
+          <h3>Languages & Frameworks</h3>
           <div class="skill-items">
-            <span class="skill-item">AWS (S3, EC2, VPC, IAM, CloudFront)</span>
-            <span class="skill-item">Lambda</span>
-            <span class="skill-item">Route 53</span>
-            <span class="skill-item">CloudFormation</span>
-            <span class="skill-item">CloudWatch</span>
+            <span class="skill-item">Python (FastAPI, Pandas)</span>
+            <span class="skill-item">Go (Goroutines, Channels)</span>
+            <span class="skill-item">Java (Spring Boot)</span>
+            <span class="skill-item">SQL</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3>DevOps & Automation</h3>
+          <h3>Cloud & DevOps</h3>
           <div class="skill-items">
-            <span class="skill-item">GitHub Actions</span>
+            <span class="skill-item">AWS (Lambda, DynamoDB, S3, EC2, CloudFront)</span>
+            <span class="skill-item">Terraform (IaC)</span>
             <span class="skill-item">Docker</span>
-            <span class="skill-item">Terraform</span>
+            <span class="skill-item">Kubernetes</span>
+            <span class="skill-item">GitHub Actions</span>
             <span class="skill-item">CI/CD Pipelines</span>
-            <span class="skill-item">Infrastructure as Code</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3>Distributed Systems</h3>
+          <h3>Backend & Systems</h3>
           <div class="skill-items">
-            <span class="skill-item">Microservices Architecture</span>
-            <span class="skill-item">Load Balancing</span>
-            <span class="skill-item">Consistent Hashing</span>
-            <span class="skill-item">CAP Theorem</span>
-            <span class="skill-item">System Design</span>
+            <span class="skill-item">Microservices</span>
+            <span class="skill-item">RESTful APIs</span>
+            <span class="skill-item">Distributed Systems</span>
+            <span class="skill-item">Event-Driven Architecture</span>
+            <span class="skill-item">Redis</span>
+            <span class="skill-item">Kafka</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>🏆 Certifications</h3>
+          <div class="skill-items">
+            <span class="skill-item">✅ AWS Solutions Architect – Associate (SAA)</span>
+            <span class="skill-item">✅ Terraform Associate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-subtitle">
+        Building scalable backend systems and cloud infrastructure
+      </p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">HiTrust, Inc. | Software Engineer (Backend Focused)</h3>
+            </div>
+            <span class="project-status-building">Jan 2023 – Dec 2024</span>
+          </div>
+          <p class="project-description">
+            • Developed secure microservices for a financial transaction system handling millions of requests, ensuring high availability (HA) for critical live services<br>
+            • Optimized database queries and backend logic, accelerating report generation by 30% for data-heavy workloads<br>
+            • Dockerized applications and orchestrated deployments on Kubernetes, managing resource allocation and scaling strategies for production environments
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Microservices</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">High Availability</span>
+            <span class="tech-tag">Performance Optimization</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Astra Technology | Product Planner (Data & ML Focus)</h3>
+            </div>
+            <span class="project-status-building">Oct 2018 – Dec 2019</span>
+          </div>
+          <p class="project-description">
+            • Utilized Python (Pandas) to process internal datasets and build time-series prediction models to forecast user behavior patterns<br>
+            • Collaborated with engineering teams to launch a Proof of Concept (PoC) for an AI-driven Computer Vision project (NTT Japan)<br>
+            • Defined technical requirements for ML model deployment and integration with production systems
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">ML Models</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">PoC Development</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Fairleigh Dickinson University</h3>
+            </div>
+            <span class="project-status-live">2025 – 2027</span>
+          </div>
+          <p class="project-description">
+            <strong>M.S. in Applied Computer Science</strong><br><br>
+            Relevant Coursework:<br>
+            • Artificial Intelligence (Python)<br>
+            • Advanced Topics in Operating Systems (Go)<br>
+            • Systems Programming (C)
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">AI/ML</span>
+            <span class="tech-tag">Operating Systems</span>
+            <span class="tech-tag">Systems Programming</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Institute for Information Industry</h3>
+            </div>
+            <span class="project-status-building">2017 – 2018</span>
+          </div>
+          <p class="project-description">
+            <strong>Big Data Analytics Bootcamp</strong><br><br>
+            Intensive training in data analytics, machine learning, and big data technologies.<br>
+            Hands-on projects with real-world datasets and ML model development.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Big Data</span>
+            <span class="tech-tag">Data Analytics</span>
+            <span class="tech-tag">Machine Learning</span>
           </div>
         </div>
       </div>
@@ -701,7 +844,7 @@
       <div class="contact">
         <h2 class="section-title">Let's Connect</h2>
         <p class="section-subtitle">
-          Ready to discuss cloud solutions, infrastructure challenges, or new opportunities
+          Open to MLOps, Backend Engineering, and Cloud Infrastructure opportunities in Vancouver, BC
         </p>
 
         <div class="contact-links">
@@ -726,7 +869,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Lui Chu. Built with AWS S3 + CloudFront + OAC</p>
+      <p>&copy; 2025 Li-Yu Chu | AWS Certified Software Engineer | Vancouver, BC</p>
     </div>
   </footer>
 </body>
