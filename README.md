@@ -1,5 +1,7 @@
 # 🚀 Portfolio Website
 
+> 🌐 **Live Site**: [https://luichu.dev/](https://luichu.dev/)
+
 個人作品集網站，使用 GitHub Pages 託管，具備自動部署功能。
 
 ## ✨ 特色
