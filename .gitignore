@@ -1,52 +1,37 @@
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Thumbs.db
-ehthumbs.db
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.auto.tfvars
+.gitsecret
 
-# VS Code & IDEs
+# IDE
 .vscode/
 .idea/
-*.code-workspace
 *.swp
 *.swo
 *~
+*.code-workspace
 
-# Logs
-*.log
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
 
-# Sensitive files
+# Secrets and credentials
 *.pem
 *.key
-*.env
-*.env.*
-!*.env.example
+.env
 .env.local
-.env.production
-.env.staging
+credentials.json
+*secret*
+*.log
 
-# Terraform
-terraform.tfvars
-.terraform/
-.terraform.lock.hcl
-*.tfstate
-*.tfstate.*
-*.tfplan
-
-# AWS
-.aws/
-credentials
-config
-
-# Cloudflare
-.cloudflare/
-
-# SSH Keys
-id_rsa
-id_rsa.pub
-*.ppk
+# Build artifacts
+dist/
+build/
+*.egg-info/

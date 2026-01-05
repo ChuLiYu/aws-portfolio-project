@@ -1,167 +1,244 @@
-# 🚀 Portfolio Website
+# Portfolio Website
 
-> 🌐 **Live Site**: [https://luichu.dev/](https://luichu.dev/)  
-> 📖 **中文版**: [README.zh-TW.md](README.zh-TW.md)
+> **Live Site**: [https://luichu.dev/](https://luichu.dev/)
 
-Personal portfolio website hosted on GitHub Pages with automated deployment.
+Modern personal portfolio website showcasing projects and skills, hosted on GitHub Pages with automated deployment.
 
-## ✨ Features
+## Features
 
-- 🌐 **Responsive Design**: Adapts to all screen sizes
-- 🚀 **Auto Deployment**: Push to deploy via GitHub Actions
-- 🆓 **Free Hosting**: Zero cost with GitHub Pages
-- 🔒 **Auto HTTPS**: Built-in SSL/TLS encryption
-- 🎨 **Multiple Themes**: Different page styles available
+- **Responsive Design**: Optimized for all devices
+- **Automated Deployment**: GitHub Actions CI/CD pipeline
+- **Free Hosting**: Zero-cost infrastructure using GitHub Pages
+- **Auto HTTPS**: Built-in SSL/TLS encryption
+- **Multiple Themes**: Different page styles and layouts
+- **DNS Management**: Terraform-managed Cloudflare DNS
 
-## 🏗️ Architecture
+## Architecture
 
 \`\`\`
-┌──────────────────┐
-│   GitHub Pages   │
-│                  │
-│  • Static Site   │
-│  • Free HTTPS    │
-│  • Auto Deploy   │
-└──────────────────┘
-         ▲
-         │ Push to master
-         │
-┌────────┴─────────┐
-│ GitHub Actions   │
-│                  │
-│ • Auto Build     │
-│ • Auto Deploy    │
-└──────────────────┘
+┌─────────────────────────────────────────────┐
+│           luichu.dev (Cloudflare)           │
+│                 DNS Records                  │
+└─────────────────┬───────────────────────────┘
+                  │
+                  ▼
+┌─────────────────────────────────────────────┐
+│            GitHub Pages                      │
+│                                              │
+│  • Static Site Hosting (Free)               │
+│  • Automatic HTTPS                           │
+│  • CDN Distribution                          │
+└─────────────────▲───────────────────────────┘
+                  │
+                  │ git push
+                  │
+┌─────────────────┴───────────────────────────┐
+│          GitHub Actions                      │
+│                                              │
+│  • Automated Build                           │
+│  • Deploy on Push                            │
+│  • Enable Pages                              │
+└─────────────────────────────────────────────┘
 \`\`\`
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
-- HTML5, CSS3, JavaScript
-- Responsive design
-- Multiple page themes
+- **HTML5, CSS3, JavaScript**: Core web technologies
+- **Responsive Design**: Mobile-first approach
+- **Multiple Themes**: Customizable layouts
 
-### Deployment
-- **GitHub Pages**: Free static site hosting
-- **GitHub Actions**: Automated CI/CD pipeline
-- **HTTPS**: Automatic SSL/TLS encryption
+### Infrastructure
+- **GitHub Pages**: Static site hosting
+- **GitHub Actions**: CI/CD automation
+- **Cloudflare**: DNS and CDN
+- **Terraform**: Infrastructure as Code for DNS
 
-## 🚀 Quick Start
+### DevOps
+- Automated deployment pipeline
+- Version-controlled infrastructure
+- Zero-downtime deployments
 
-### Prerequisites
-
-- GitHub account
-- Git installed
-
-### 1. Fork/Clone the Repository
-
-\`\`\`bash
-git clone https://github.com/YOUR_USERNAME/aws-portfolio-project.git
-cd aws-portfolio-project
-\`\`\`
-
-### 2. Enable GitHub Pages
-
-1. Go to **Settings** → **Pages**
-2. Under **Source**, select **GitHub Actions**
-3. Save settings
-
-### 3. Customize Content
-
-Edit files in the \`frontend/\` directory:
-- [frontend/index.html](frontend/index.html) - Main page content
-- [frontend/styles.css](frontend/styles.css) - Styling
-- [frontend/assets/](frontend/assets/) - Images and media
-
-### 4. Deploy (Automatic)
-
-Simply push to the master branch:
-
-\`\`\`bash
-git add .
-git commit -m "Update portfolio"
-git push origin master
-\`\`\`
-
-GitHub Actions will automatically deploy to:
-\`\`\`
-https://YOUR_USERNAME.github.io/aws-portfolio-project/
-\`\`\`
-
-### 5. Custom Domain (Optional)
-
-1. Create \`frontend/CNAME\` file with your domain:
-   \`\`\`
-   www.yoursite.com
-   \`\`\`
-
-2. Configure DNS CNAME record with your provider:
-   \`\`\`
-   CNAME  www  YOUR_USERNAME.github.io
-   \`\`\`
-
-## 📁 Project Structure
+## Project Structure
 
 \`\`\`
-aws-portfolio-project/
-├── .github/workflows/
-│   └── deploy-pages.yml        # GitHub Actions auto-deployment
-├── frontend/                   # Static website files
+portfolio/
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml    # GitHub Actions workflow
+├── frontend/
 │   ├── index.html              # Main page
 │   ├── index-zh.html           # Chinese version
-│   ├── simple.html             # Simple theme
-│   ├── tech-style.html         # Tech theme
-│   ├── styles.css              # Stylesheet
-│   └── assets/                 # Static assets (images, etc.)
-├── docs/
-│   └── GITHUB_PAGES_MIGRATION.md  # Migration guide
-├── README.md                   # This file (English)
-└── README.zh-TW.md             # Chinese version
+│   ├── styles.css              # Styles
+│   ├── CNAME                   # Custom domain
+│   └── assets/                 # Images and resources
+├── terraform/
+│   └── cloudflare/             # DNS management
+│       ├── main.tf             # Cloudflare config
+│       ├── terraform.tfvars.example
+│       └── README.md
+├── .gitignore
+└── README.md
 \`\`\`
 
-## 🔧 Local Preview
+## Quick Start
 
-Preview the website using any local server:
+### Local Development
 
 \`\`\`bash
-# Using Python
+# Clone the repository
+git clone https://github.com/yourusername/aws-portfolio-project.git
+cd aws-portfolio-project
+
+# Serve locally (Python)
 cd frontend
-python3 -m http.server 8000
+python3 -m http.server 3000
 
-# Or using PHP
-php -S localhost:8000
-
-# Or using VS Code Live Server extension
+# Or use any static server
+# Open http://localhost:3000
 \`\`\`
 
-Then open \`http://localhost:8000\` in your browser.
+### Deployment
 
-## 📚 Documentation
+The site automatically deploys when you push to the \`main\` branch:
 
-- [GitHub Pages Migration Guide](docs/GITHUB_PAGES_MIGRATION.md)
-- [DNS Configuration with Terraform](dns-terraform/README.md)
+\`\`\`bash
+# Make changes
+vim frontend/index.html
 
-## 🤝 Contributing
+# Commit and push
+git add .
+git commit -m "Update portfolio content"
+git push origin main
 
-Contributions are welcome! Feel free to submit Issues or Pull Requests.
+# GitHub Actions will automatically:
+# 1. Build and deploy to GitHub Pages
+# 2. Site live at https://luichu.dev in ~1 minute
+\`\`\`
 
-### Development Workflow
-1. Fork the project
-2. Create a feature branch
-3. Commit your changes
-4. Create a Pull Request
+## DNS Configuration
 
-## 📄 License
+DNS is managed via Terraform for infrastructure as code:
 
-MIT License
+\`\`\`bash
+cd terraform/cloudflare
 
-## 🆘 Support
+# Setup (first time)
+cp terraform.tfvars.example terraform.tfvars
+# Edit terraform.tfvars with your Cloudflare API token
 
-If you encounter any issues:
+# Apply changes
+terraform init
+terraform plan
+terraform apply
+\`\`\`
 
-1. Check the [Migration Guide](docs/GITHUB_PAGES_MIGRATION.md)
-2. Submit an [Issue](https://github.com/YOUR_USERNAME/aws-portfolio-project/issues)
+## Cost Analysis
+
+| Service | Monthly Cost | Notes |
+|---------|--------------|-------|
+| GitHub Pages | **$0** | Free tier |
+| Cloudflare DNS | **$0** | Free tier |
+| **Total** | **$0/month** | Zero infrastructure cost |
+
+**Previous AWS Cost**: $12-36/year (S3 + CloudFront)  
+**Savings**: 100% cost reduction
+
+## Environment Variables
+
+No environment variables required for basic setup. For DNS management:
+
+\`\`\`bash
+# terraform/cloudflare/terraform.tfvars
+cloudflare_api_token = "your-token"
+zone_id = "your-zone-id"
+\`\`\`
+
+## CI/CD Pipeline
+
+GitHub Actions workflow (\`.github/workflows/deploy-pages.yml\`):
+
+\`\`\`yaml
+1. Triggered on push to main
+2. Checkout code
+3. Configure GitHub Pages
+4. Deploy frontend/ directory
+5. Site live at luichu.dev
+\`\`\`
+
+## Featured Projects
+
+Portfolio showcases:
+- **Chainy**: Serverless event tracking (AWS Lambda, DynamoDB, Terraform)
+- **Raft-Recovery**: Distributed consensus implementation (Go)
+- **This Portfolio**: Modern web architecture migration
+
+## Development
+
+### Adding New Content
+
+1. **Edit HTML**: Update \`frontend/index.html\`
+2. **Update Styles**: Modify \`frontend/styles.css\`
+3. **Add Assets**: Place in \`frontend/assets/\`
+4. **Test Locally**: Run local server
+5. **Deploy**: Push to main branch
+
+### Customization
+
+- **Domain**: Update \`frontend/CNAME\`
+- **DNS**: Modify \`terraform/cloudflare/main.tf\`
+- **Workflow**: Edit \`.github/workflows/deploy-pages.yml\`
+
+## Troubleshooting
+
+### DNS Not Resolving
+\`\`\`bash
+# Check DNS records
+dig luichu.dev
+nslookup luichu.dev
+
+# Verify Cloudflare settings
+cd terraform/cloudflare
+terraform plan
+\`\`\`
+
+### Pages Not Updating
+- Check GitHub Actions run status
+- Verify Pages is enabled in repo settings
+- Clear browser cache (Ctrl+Shift+R)
+
+### Custom Domain Issues
+- Ensure CNAME file contains correct domain
+- Verify DNS A records point to GitHub Pages IPs:
+  - 185.199.108.153
+  - 185.199.109.153
+  - 185.199.110.153
+  - 185.199.111.153
+
+## Contributing
+
+1. Fork the repository
+2. Create feature branch (\`git checkout -b feature/amazing\`)
+3. Commit changes (\`git commit -m 'Add amazing feature'\`)
+4. Push to branch (\`git push origin feature/amazing\`)
+5. Open Pull Request
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Contact
+
+- **Website**: [https://luichu.dev](https://luichu.dev)
+- **Email**: chuliyuaw@gmail.com
+- **Location**: Vancouver, BC, Canada
+
+## Acknowledgments
+
+- GitHub Pages for free hosting
+- Cloudflare for DNS management
+- Open source community
 
 ---
 
-**⭐ If this project helps you, please give it a star!**
+**Built with ❤️ using modern web technologies and DevOps best practices**
