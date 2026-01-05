@@ -23,24 +23,23 @@ variable "cloudflare_api_token" {
 variable "zone_id" {
   description = "Cloudflare Zone ID for luichu.dev"
   type        = string
-  # Get this from Cloudflare dashboard
 }
 
 # Root domain A records for GitHub Pages
 resource "cloudflare_record" "root_a_1" {
   zone_id = var.zone_id
   name    = "luichu.dev"
-  value   = "185.199.108.153"
+  content = "185.199.108.153"
   type    = "A"
-  ttl     = 1  # Auto
-  proxied = false  # MUST be false for GitHub Pages
+  ttl     = 1
+  proxied = false
   comment = "GitHub Pages - IP 1/4"
 }
 
 resource "cloudflare_record" "root_a_2" {
   zone_id = var.zone_id
   name    = "luichu.dev"
-  value   = "185.199.109.153"
+  content = "185.199.109.153"
   type    = "A"
   ttl     = 1
   proxied = false
@@ -50,7 +49,7 @@ resource "cloudflare_record" "root_a_2" {
 resource "cloudflare_record" "root_a_3" {
   zone_id = var.zone_id
   name    = "luichu.dev"
-  value   = "185.199.110.153"
+  content = "185.199.110.153"
   type    = "A"
   ttl     = 1
   proxied = false
@@ -60,7 +59,7 @@ resource "cloudflare_record" "root_a_3" {
 resource "cloudflare_record" "root_a_4" {
   zone_id = var.zone_id
   name    = "luichu.dev"
-  value   = "185.199.111.153"
+  content = "185.199.111.153"
   type    = "A"
   ttl     = 1
   proxied = false
@@ -71,24 +70,17 @@ resource "cloudflare_record" "root_a_4" {
 resource "cloudflare_record" "www" {
   zone_id = var.zone_id
   name    = "www"
-  value   = "ChuLiYu.github.io"
+  content = "ChuLiYu.github.io"
   type    = "CNAME"
   ttl     = 1
-  proxied = false  # MUST be false for GitHub Pages
+  proxied = false
   comment = "GitHub Pages - www subdomain"
-}
-
-# Keep existing chainy subdomain (do not touch)
-# This is just a data source to show it exists
-data "cloudflare_record" "chainy" {
-  zone_id  = var.zone_id
-  hostname = "chainy.luichu.dev"
 }
 
 output "github_pages_setup" {
   value = {
-    root_domain = "luichu.dev → GitHub Pages"
-    www_domain  = "www.luichu.dev → GitHub Pages"
-    chainy      = "chainy.luichu.dev → ${data.cloudflare_record.chainy.value} (unchanged)"
+    root_domain = "luichu.dev → GitHub Pages (4 A records)"
+    www_domain  = "www.luichu.dev → GitHub Pages (CNAME)"
+    note        = "chainy.luichu.dev remains unchanged"
   }
 }
