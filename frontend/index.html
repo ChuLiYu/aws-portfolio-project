@@ -517,11 +517,12 @@
         <img src="assets/images/profile/avatar.jpg" alt="Lui Chu Profile Photo" class="profile-image">
       </div>
       <h1>Hi, I'm Li-Yu Chu</h1>
-      <h2 class="job-title">AWS Certified Software Engineer</h2>
-      <p class="subtitle">M.S. in Computer Science | MLOps & Cloud Infrastructure Specialist</p>
+      <h2 class="job-title">MLOps Engineer | AWS Certified Solutions Architect</h2>
+      <p class="subtitle">M.S. in Computer Science | Specializing in ML Infrastructure & Production ML Systems</p>
       <p class="description">
-        AWS Certified Solutions Architect & Terraform Associate specializing in Cloud Infrastructure (IaC), Backend Architecture, and MLOps.
-        Passionate about bridging Data Science and Infrastructure to deliver scalable, production-grade ML systems.
+        Building production-grade ML infrastructure with cloud-native technologies. Expertise in model deployment automation, 
+        scalable inference systems, and ML pipeline orchestration using AWS, Terraform, and Python. 
+        Bridging the gap between Data Science and Production Engineering.
       </p>
       <div class="cta-buttons">
         <a href="#contact" class="btn btn-primary">View Resume</a>
@@ -536,21 +537,23 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
         <p>
-          I am an AWS Certified Software Engineer and M.S. in Computer Science candidate at Fairleigh Dickinson University,
-          specializing in Cloud Infrastructure, MLOps, and Backend Architecture. With proven expertise in building scalable,
-          production-grade platforms using Go, Python, and Terraform, I excel at bridging the gap between Data Science and
-          Infrastructure to deliver reliable, high-performance systems.
+          I am an <strong>MLOps Engineer</strong> and AWS Certified Solutions Architect with a strong foundation in both 
+          Machine Learning and Production Infrastructure. Currently pursuing M.S. in Computer Science at Fairleigh Dickinson 
+          University, I specialize in building <strong>end-to-end ML systems</strong> that seamlessly integrate model development, 
+          deployment automation, and production monitoring.
         </p>
         <p>
-          My technical experience spans serverless architectures (AWS Lambda, DynamoDB), distributed systems engineering (Go),
-          and MLOps practices including model deployment, monitoring, and automation. I've successfully built event-driven
-          backends handling high-concurrency ML inference endpoints, engineered fault-tolerant distributed job engines for
-          large-scale ML workloads, and implemented comprehensive IaC solutions with Terraform for reproducible environments.
+          My expertise centers on <strong>ML infrastructure engineering</strong>: designing serverless inference APIs with 
+          auto-scaling (AWS Lambda, DynamoDB), orchestrating distributed training jobs with fault tolerance (Go-based job engines), 
+          and implementing reproducible ML environments using Infrastructure as Code (Terraform). I've architected systems handling 
+          high-concurrency model serving with sub-millisecond latency and built resilient job queues optimized for large-scale 
+          ML workloads.
         </p>
         <p>
-          Previously at HiTrust Inc., I developed secure microservices for financial systems handling millions of requests,
-          optimized data-heavy workloads by 30%, and managed Kubernetes deployments. I'm passionate about creating robust
-          infrastructure that enables data scientists to deploy and scale ML models efficiently in production.
+          With professional experience at HiTrust Inc. developing production microservices and optimizing data pipelines (30% 
+          performance improvement), plus hands-on ML work at Astra Technology (time-series forecasting, Computer Vision PoCs), 
+          I bring a unique combination of <strong>ML understanding and infrastructure expertise</strong>. I'm passionate about 
+          creating robust, scalable systems that empower data scientists to deploy models confidently in production.
         </p>
       </div>
     </div>
@@ -561,28 +564,30 @@
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">
-        Production systems demonstrating cloud architecture, distributed systems, and backend engineering
+        MLOps infrastructure, ML model serving platforms, and distributed ML training systems
       </p>
 
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-header">
             <div>
-              <h3 class="project-title">Chainy | Enterprise Serverless Infrastructure</h3>
+              <h3 class="project-title">Chainy | Serverless ML Inference Infrastructure</h3>
             </div>
-            <span class="project-status-live">Live</span>
+            <span class="project-status-live">Production</span>
           </div>
           <p class="project-description">
-            Architected a secure, event-driven backend using AWS Lambda and DynamoDB, designed for high-concurrency
-            requests with sub-millisecond latency. Managed 100% of cloud resources via Terraform with modular IaC 
-            for Dev/Prod environments and automated drift detection.
+            <strong>MLOps-ready serverless platform</strong> architected for deploying and serving ML models at scale. 
+            Built event-driven inference APIs using AWS Lambda with auto-scaling for variable load, DynamoDB for low-latency 
+            prediction logging, and comprehensive monitoring. 100% Infrastructure as Code with Terraform managing isolated 
+            Dev/Staging/Prod environments. Designed to handle high-concurrency model predictions with sub-100ms latency.
           </p>
           <div class="project-tech">
+            <span class="tech-tag">ML Model Serving</span>
             <span class="tech-tag">AWS Lambda</span>
             <span class="tech-tag">DynamoDB</span>
-            <span class="tech-tag">Terraform</span>
-            <span class="tech-tag">AWS WAF</span>
-            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">Terraform IaC</span>
+            <span class="tech-tag">CI/CD</span>
+            <span class="tech-tag">Monitoring</span>
           </div>
           <div class="project-links">
             <a href="https://chainy.luichu.dev">🌐 Live Demo</a>
@@ -593,22 +598,23 @@
         <div class="project-card">
           <div class="project-header">
             <div>
-              <h3 class="project-title">Raft-Recovery | Distributed Job Queue Engine</h3>
+              <h3 class="project-title">Raft-Recovery | Distributed ML Training Orchestrator</h3>
             </div>
             <span class="project-status-building">Phase 1 Complete</span>
           </div>
           <p class="project-description">
-            Engineered a high-throughput distributed job engine in Go, optimized for managing large-scale machine learning
-            workloads and real-time data processing tasks. Utilized Goroutines and Channels to handle concurrent model 
-            inference requests with thread safety. Implemented Write-Ahead Log (WAL) for fault-tolerant task persistence 
-            and seamless recovery.
+            <strong>Fault-tolerant job orchestration system</strong> engineered in Go for managing large-scale ML training 
+            workloads and distributed inference pipelines. Leverages Goroutines and Channels for concurrent job execution with 
+            thread safety, critical for parallelized hyperparameter tuning and batch predictions. Implements Write-Ahead Log (WAL) 
+            for crash recovery, ensuring long-running training jobs survive node failures. Ideal for orchestrating multi-hour 
+            model training across distributed clusters.
           </p>
           <div class="project-tech">
-            <span class="tech-tag">Go</span>
-            <span class="tech-tag">Raft Consensus</span>
-            <span class="tech-tag">Distributed Systems</span>
-            <span class="tech-tag">WAL</span>
-            <span class="tech-tag">Concurrency</span>
+            <span class="tech-tag">ML Job Orchestration</span>
+            <span class="tech-tag">Go Concurrency</span>
+            <span class="tech-tag">Fault Tolerance</span>
+            <span class="tech-tag">Distributed Training</span>
+            <span class="tech-tag">WAL Recovery</span>
           </div>
           <div class="project-links">
             <a href="https://github.com/ChuLiYu/raft-recovery">📚 Documentation</a>
@@ -619,64 +625,61 @@
         <div class="project-card">
           <div class="project-header">
             <div>
-              <h3 class="project-title">Cloud Portfolio Platform with FastAPI</h3>
+              <h3 class="project-title">End-to-End MLOps Pipeline with Model Registry</h3>
             </div>
-            <span class="project-status-live">Live</span>
+            <span class="project-status-building">In Progress</span>
           </div>
           <p class="project-description">
-            Production cloud infrastructure featuring FastAPI backend with automatic OpenAPI documentation, deployed on 
-            EC2 with CloudFront CDN. Implements rate limiting, input sanitization, and comprehensive monitoring via 
-            CloudWatch. Full CI/CD pipeline with GitHub Actions and Infrastructure as Code using Terraform.
+            <strong>Complete ML lifecycle automation</strong> from training to production deployment. Building automated pipeline 
+            with data versioning (DVC), experiment tracking (MLflow), model registry with versioning, and CI/CD for models. 
+            Features automated model testing, A/B deployment strategies, and drift detection. Deploys models as FastAPI endpoints 
+            on AWS Lambda with Terraform IaC. Includes comprehensive monitoring dashboards for model performance metrics, 
+            prediction latency, and data distribution shifts.
           </p>
           <div class="project-tech">
+            <span class="tech-tag">MLflow</span>
+            <span class="tech-tag">DVC</span>
+            <span class="tech-tag">Model Registry</span>
             <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Terraform</span>
-            <span class="tech-tag">EC2</span>
-            <span class="tech-tag">CloudFront</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">AWS Lambda</span>
+            <span class="tech-tag">Drift Detection</span>
+            <span class="tech-tag">A/B Testing</span>
           </div>
           <div class="project-links">
-            <a href="https://luichu.dev">🌐 Live Site</a>
-            <a href="https://luichu.dev/docs">📚 API Docs</a>
-            <a href="https://github.com/ChuLiYu/aws-portfolio-project">📁 GitHub Repo</a>
+            <a href="https://github.com/ChuLiYu/mlops-pipeline">📚 Documentation (Coming Soon)</a>
           </div>
         </div>
       </div>
 
-      <!-- Architecture Code Block -->
+      <!-- MLOps Architecture Code Block -->
       <div class="code-block">
-        <div class="comment"># Cloud Infrastructure Architecture</div>
-        <div class="keyword">resource</div> <span class="string">"aws_s3_bucket" "portfolio"</span> {
-        <div class="comment"> # Static website hosting</div>
-        <div class="keyword"> bucket</div> = <span class="string">"portfolio-frontend"</span>
-        <div class="keyword"> tags</div> = { <span class="string">Environment = "production"</span> }
+        <div class="comment"># MLOps Infrastructure Architecture</div>
+        <div class="keyword">resource</div> <span class="string">"aws_lambda_function" "ml_inference"</span> {
+        <div class="comment"> # Serverless model serving with auto-scaling</div>
+        <div class="keyword"> function_name</div> = <span class="string">"model-inference-api"</span>
+        <div class="keyword"> runtime</div> = <span class="string">"python3.11"</span>
+        <div class="keyword"> memory_size</div> = <span class="string">3008</span>  <div class="comment"># Optimized for ML inference</div>
+        <div class="keyword"> environment</div> = {
+        <div class="keyword">   MODEL_VERSION</div> = <span class="string">"v1.2.3"</span>
+        <div class="keyword">   MLFLOW_TRACKING_URI</div> = <span class="string">"s3://mlflow-artifacts"</span>
+        }
         }
         <br>
-        <div class="keyword">resource</div> <span class="string">"aws_instance" "api_server"</span> {
-        <div class="comment"> # FastAPI backend on EC2</div>
-        <div class="keyword"> ami</div> = <span class="string">data.aws_ami.amazon_linux_2023.id</span>
-        <div class="keyword"> instance_type</div> = <span class="string">"t3.micro"</span>
-        <div class="keyword"> vpc_security_group_ids</div> = [<span class="string">aws_security_group.api.id</span>]
+        <div class="keyword">resource</div> <span class="string">"aws_dynamodb_table" "predictions_log"</span> {
+        <div class="comment"> # Store predictions for monitoring & retraining</div>
+        <div class="keyword"> name</div> = <span class="string">"ml-predictions"</span>
+        <div class="keyword"> billing_mode</div> = <span class="string">"PAY_PER_REQUEST"</span>
+        <div class="keyword"> ttl</div> = { <span class="string">enabled = true, attribute_name = "expiry"</span> }
         }
         <br>
-        <div class="keyword">FastAPI</div> <span class="string">"guestbook-api"</span> {
-        <div class="comment"> # High-performance async API</div>
-        <div class="keyword"> Framework</div>: <span class="string">"FastAPI + Uvicorn"</span>
-        <div class="keyword"> Validation</div>: <span class="string">"Pydantic models"</span>
-        <div class="keyword"> Docs</div>: <span class="string">"Auto-generated OpenAPI/Swagger"</span>
-        <div class="keyword"> Security</div>: <span class="string">"Rate limiting + XSS protection"</span>
+        <div class="keyword">MLflow</div> <span class="string">"experiment-tracking"</span> {
+        <div class="comment"> # Model versioning & registry</div>
+        <div class="keyword"> Backend</div>: <span class="string">"PostgreSQL RDS"</span>
+        <div class="keyword"> Artifacts</div>: <span class="string">"S3 bucket"</span>
+        <div class="keyword"> Registry</div>: <span class="string">"Model versioning + staging"</span>
         }
         <br>
-        <div class="keyword">Terraform</div> <span class="string">"chainy-infrastructure"</span> {
-        <div class="comment"> # Serverless backend IaC</div>
-        <div class="keyword"> Lambda</div>: <span class="string">"Event-driven functions"</span>
-        <div class="keyword"> DynamoDB</div>: <span class="string">"NoSQL data persistence"</span>
-        <div class="keyword"> Environments</div>: <span class="string">"Dev/Staging/Prod isolation"</span>
-        }
-        <br>
-        <div class="comment"># Cost: ~$15/month (EC2 t3.micro + S3 + CloudFront)</div>
+        <div class="comment"># Cost: ~$5-15/month (Lambda + DynamoDB + RDS micro)</div>
       </div>
     </div>
   </section>
@@ -686,49 +689,52 @@
     <div class="container">
       <h2 class="section-title">Technical Expertise</h2>
       <p class="section-subtitle">
-        Cloud Infrastructure (IaC) • Backend Engineering • Distributed Systems • DevOps
+        MLOps Engineering • ML Infrastructure • Model Deployment & Monitoring • Cloud Architecture
       </p>
 
       <div class="skills-grid">
         <div class="skill-category">
-          <h3>Languages & Frameworks</h3>
+          <h3>🤖 MLOps & ML Engineering</h3>
           <div class="skill-items">
-            <span class="skill-item">Python (FastAPI, Pandas)</span>
-            <span class="skill-item">Go (Goroutines, Channels)</span>
-            <span class="skill-item">Java (Spring Boot)</span>
-            <span class="skill-item">SQL</span>
+            <span class="skill-item">Model Deployment & Serving</span>
+            <span class="skill-item">ML Pipeline Orchestration</span>
+            <span class="skill-item">MLflow (Tracking & Registry)</span>
+            <span class="skill-item">Python (Pandas, NumPy, Scikit-learn)</span>
+            <span class="skill-item">Experiment Tracking</span>
+            <span class="skill-item">Model Monitoring & Drift Detection</span>
+            <span class="skill-item">A/B Testing for Models</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3>Cloud & DevOps</h3>
+          <h3>☁️ Cloud Infrastructure & IaC</h3>
           <div class="skill-items">
-            <span class="skill-item">AWS (Lambda, DynamoDB, S3, EC2, CloudFront)</span>
-            <span class="skill-item">Terraform (IaC)</span>
-            <span class="skill-item">Docker</span>
-            <span class="skill-item">Kubernetes</span>
-            <span class="skill-item">GitHub Actions</span>
-            <span class="skill-item">CI/CD Pipelines</span>
+            <span class="skill-item">AWS (Lambda, SageMaker, DynamoDB, S3, EC2)</span>
+            <span class="skill-item">Terraform (Multi-env IaC)</span>
+            <span class="skill-item">Docker & Kubernetes</span>
+            <span class="skill-item">Serverless Architecture</span>
+            <span class="skill-item">CI/CD (GitHub Actions)</span>
+            <span class="skill-item">Infrastructure Monitoring</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3>Backend & Systems</h3>
+          <h3>🔧 Backend & Distributed Systems</h3>
           <div class="skill-items">
-            <span class="skill-item">Microservices</span>
-            <span class="skill-item">RESTful APIs</span>
-            <span class="skill-item">Distributed Systems</span>
+            <span class="skill-item">Python (FastAPI, async/await)</span>
+            <span class="skill-item">Go (Concurrency, Distributed Systems)</span>
+            <span class="skill-item">RESTful APIs & Microservices</span>
             <span class="skill-item">Event-Driven Architecture</span>
-            <span class="skill-item">Redis</span>
-            <span class="skill-item">Kafka</span>
+            <span class="skill-item">PostgreSQL, DynamoDB, Redis</span>
+            <span class="skill-item">Message Queues (Kafka)</span>
           </div>
         </div>
 
         <div class="skill-category">
           <h3>🏆 Certifications</h3>
           <div class="skill-items">
-            <span class="skill-item">✅ AWS Solutions Architect – Associate (SAA)</span>
-            <span class="skill-item">✅ Terraform Associate</span>
+            <span class="skill-item">✅ AWS Solutions Architect – Associate</span>
+            <span class="skill-item">✅ HashiCorp Terraform Associate</span>
           </div>
         </div>
       </div>
@@ -844,7 +850,7 @@
       <div class="contact">
         <h2 class="section-title">Let's Connect</h2>
         <p class="section-subtitle">
-          Open to MLOps, Backend Engineering, and Cloud Infrastructure opportunities in Vancouver, BC
+          Actively seeking MLOps Engineer and ML Infrastructure roles in Vancouver, BC | Open to remote opportunities
         </p>
 
         <div class="contact-links">
