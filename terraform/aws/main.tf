@@ -5,7 +5,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = "~> 4.67"  # 使用 4.x 版本，文件更小，下载更快
     }
   }
 }
