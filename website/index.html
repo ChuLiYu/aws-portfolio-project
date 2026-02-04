@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <!-- SEO Meta Tags -->
-  <title>Liyu Portfolio — Data Engineer (Fintech) & MLOps</title>
+  <title>LiYu Chu | Liyu Portfolio — Data Engineer (Fintech) & MLOps</title>
   <meta name="description"
-    content="Liyu Portfolio showcases data engineering and MLOps expertise in Fintech and cloud infrastructure." />
+    content="LiYu Chu's Portfolio showcases production-grade MLOps, Fintech systems, and high-concurrency cloud infrastructure." />
   <meta name="keywords"
-    content="Data Engineer, Fintech, MLOps, AWS, ETL, Python, Database Optimization, High Availability, Financial Technology" />
-  <meta name="author" content="Lui Chu" />
+    content="LiYu Chu, Data Engineer, MLOps, AlphaPulse, Fintech, AWS, Oracle Cloud, ETL, Python, Terraform, Crypto Trading" />
+  <meta name="author" content="LiYu Chu" />
   <link rel="canonical" href="https://luichu.dev/" />
 
   <!-- Language Alternates -->
@@ -33,20 +33,11 @@
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://luichu.dev/" />
-  <meta property="og:title" content="Lui Chu — Data Engineer (Fintech) & MLOps" />
+  <meta property="og:title" content="LiYu Chu | Liyu Portfolio — Data Engineer (Fintech) & MLOps" />
   <meta property="og:description"
-    content="Building robust financial data systems and scalable ML infrastructure. Specialist in high-concurrency backends and cloud architecture." />
+    content="Building zero-cost, production-grade MLOps platforms and high-concurrency financial systems." />
   <meta property="og:image" content="https://luichu.dev/assets/images/profile/avatar.jpg" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://luichu.dev/" />
-  <meta property="twitter:title" content="Lui Chu — Data Engineer (Fintech) & MLOps" />
-  <meta property="twitter:description"
-    content="Building robust financial data systems and scalable ML infrastructure. Specialist in high-concurrency backends and cloud architecture." />
-  <meta property="twitter:image" content="https://luichu.dev/assets/images/profile/avatar.jpg" />
-
-  <title>Lui Chu — Data Engineer & MLOps Practitioner</title>
   <style>
     * {
       margin: 0;
@@ -64,6 +55,7 @@
       --accent-blue: #58a6ff;
       --accent-green: #3fb950;
       --accent-purple: #a5a5ff;
+      --accent-orange: #f0883e;
       --border-color: #30363d;
       --border-hover: #58a6ff;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -261,16 +253,6 @@
       color: var(--text-primary);
     }
 
-    .section-subtitle {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
     /* About Section */
     .about-content {
       background: var(--bg-card);
@@ -284,10 +266,6 @@
       color: var(--text-secondary);
       margin-bottom: 1.5rem;
       line-height: 1.7;
-    }
-
-    .about-content p:last-child {
-      margin-bottom: 0;
     }
 
     /* Projects Grid */
@@ -327,8 +305,7 @@
     }
 
     .project-status-live,
-    .project-status-building,
-    .project-status-todo {
+    .project-status-building {
       padding: 0.25rem 0.75rem;
       border-radius: 12px;
       font-size: 0.8rem;
@@ -338,16 +315,6 @@
     .project-status-live {
       background: var(--accent-green);
       color: var(--bg-dark);
-    }
-
-    .project-status-building {
-      background: var(--accent-blue);
-      color: var(--bg-dark);
-    }
-
-    .project-status-todo {
-      background: var(--text-muted);
-      color: var(--text-primary);
     }
 
     .project-description {
@@ -392,7 +359,7 @@
       text-decoration: underline;
     }
 
-    /* Skills Section */
+    /* Skills Matrix */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -429,65 +396,6 @@
       border: 1px solid var(--border-color);
     }
 
-    /* Code Block Style */
-    .code-block {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
-      font-size: 0.9rem;
-      overflow-x: auto;
-    }
-
-    .code-block .comment {
-      color: var(--text-muted);
-    }
-
-    .code-block .keyword {
-      color: var(--accent-purple);
-    }
-
-    .code-block .string {
-      color: var(--accent-green);
-    }
-
-    /* Contact Section */
-    .contact {
-      background: var(--bg-card);
-      border-radius: 8px;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      padding: 1rem 1.5rem;
-      background: var(--bg-hover);
-      border-radius: 6px;
-      border: 1px solid var(--border-color);
-      transition: all 0.2s;
-    }
-
-    .contact-link:hover {
-      color: var(--accent-blue);
-      border-color: var(--accent-blue);
-    }
-
     /* Footer */
     .footer {
       border-top: 1px solid var(--border-color);
@@ -496,31 +404,9 @@
       color: var(--text-muted);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .container {
-        padding: 0 1rem;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
       .projects-grid {
         grid-template-columns: 1fr;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-links {
-        flex-direction: column;
-        align-items: center;
       }
     }
   </style>
@@ -530,20 +416,17 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSS5846P" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Header -->
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <a href="#" class="logo">Lui Chu</a>
+        <a href="#" class="logo">Liyu Portfolio</a>
         <div style="display: flex; gap: 2rem; align-items: center;">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div class="language-switcher">
@@ -560,18 +443,18 @@
   <section class="hero">
     <div class="container">
       <div class="profile-image-container">
-        <img src="assets/images/profile/avatar.jpg" alt="Lui Chu Profile Photo" class="profile-image">
+        <img src="assets/images/profile/avatar.jpg" alt="LiYu Chu Profile Photo" class="profile-image">
       </div>
-      <h1>Hi, I'm Li-Yu Chu</h1>
+      <h1>Hi, I'm LiYu Chu</h1>
       <h2 class="job-title">Data Engineer (Fintech) | MLOps Practitioner</h2>
-      <p class="subtitle">M.S. in Computer Science | Specializing in Financial Data Systems & Cloud Infrastructure</p>
+      <p class="subtitle">Specializing in Zero-Cost, High-Performance MLOps Platforms & Financial Data Systems</p>
       <p class="description">
-        Data Engineer with a strong background in building <strong>high-concurrency financial systems</strong> and
-        scalable data pipelines. I leverage MLOps best practices to bridge the gap between robust data infrastructure
-        and machine learning production. Experienced in AWS, ETL optimization, and guaranteeing ACID consistency.
+        M.S. in Computer Science. Experienced in architecting production-ready ML infrastructure and high-concurrency 
+        backend systems. I focus on bridging the gap between ML research and stable production environments 
+        with extreme cost efficiency ($0/mo).
       </p>
       <div class="cta-buttons">
-        <a href="#contact" class="btn btn-primary">View Resume</a>
+        <a href="#contact" class="btn btn-primary">Connect with Me</a>
         <a href="https://github.com/ChuLiYu" class="btn btn-secondary">GitHub</a>
       </div>
     </div>
@@ -580,26 +463,18 @@
   <!-- About Section -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title">Professional Focus</h2>
       <div class="about-content">
         <p>
-          I am a <strong>Data Engineer</strong> with specialized experience in the <strong>Fintech</strong> sector.
-          Currently pursuing my M.S. in Computer Science, I focus on architecting resilient backend systems that
-          handle mission-critical financial transactions with zero tolerance for data inconsistencies.
+          I am a <strong>Data Engineer</strong> with a strong foundation in <strong>Fintech</strong> and <strong>MLOps</strong>. 
+          Currently pursuing my M.S. in Computer Science, my expertise lies in building resilient, cost-conscious data 
+          systems that handle mission-critical workloads. I leverage technologies like Apache Airflow, MLflow, and 
+          Kubernetes (k3s) to automate the entire ML lifecycle.
         </p>
         <p>
-          My core expertise lies in <strong>data infrastructure and ETL</strong>: optimizing complex SQL queries for
-          financial reporting, designing high-availability (HA) microservices, and implementing data processing
-          pipelines
-          that serve both real-time user needs and analytical models. I apply <strong>MLOps principles</strong>—such as
-          versioning, automation, and monitoring—to data engineering, ensuring that data quality matches the strict
-          requirements of financial institutions.
-        </p>
-        <p>
-          At <strong>HiTrust Inc.</strong>, I engineered secure microservices for high-volume transaction systems and
-          optimized data pipelines that improved report generation performance by 30%. I am passionate about solving
-          complex data challenges, from ensuring transactional integrity in distributed systems to building the
-          foundation for advanced analytics and AI.
+          I have a proven track record of reducing infrastructure costs (from $11/mo to $0/mo) while maintaining 
+          high performance on ARM64 architectures. My engineering philosophy centers on <strong>Financial Precision</strong>, 
+          <strong>Architectural Decoupling</strong>, and <strong>FinOps Excellence</strong>.
         </p>
       </div>
     </div>
@@ -609,112 +484,75 @@
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">
-        Scalable infrastructure, data processing systems, and MLOps platforms
-      </p>
-
       <div class="projects-grid">
-        <div class="project-card">
+        
+        <!-- AlphaPulse (Primary Project) -->
+        <div class="project-card" style="grid-column: 1 / -1; border-color: var(--accent-blue);">
           <div class="project-header">
             <div>
-              <h3 class="project-title">Chainy | Serverless Data & Inference Platform</h3>
+              <h3 class="project-title">AlphaPulse | Production-Grade MLOps Platform</h3>
+              <p style="color: var(--accent-orange); font-weight: 600; font-size: 0.9rem;">$0/mo Hosting • Oracle ARM64 • Crypto-Fintech</p>
             </div>
-            <span class="project-status-live">Production</span>
+            <span class="project-status-live">Live Demo</span>
           </div>
           <p class="project-description">
-            <strong>Serverless infrastructure</strong> architected for scalable data processing and model inference.
-            Built event-driven APIs using AWS Lambda with auto-scaling to handle variable traffic loads.
-            Utilized DynamoDB for low-latency state management and logging. 100% Infrastructure as Code with Terraform
-            managing isolated Dev/Staging/Prod environments, demonstrating rigorous data ops practices.
+            A high-performance MLOps platform built for quantitative crypto trading. 
+            Features include <strong>Apache Airflow</strong> for chunked ETL (handling 8+ years of data), 
+            <strong>MLflow</strong> for registry, and <strong>Terraform</strong> for provider-agnostic cloud strategy. 
+            Optimized for 24/7 stability on Oracle Cloud's ARM64 free tier with zero compute costs.
           </p>
           <div class="project-tech">
-            <span class="tech-tag">AWS Lambda</span>
-            <span class="tech-tag">DynamoDB</span>
-            <span class="tech-tag">Terraform IaC</span>
-            <span class="tech-tag">Data API</span>
-            <span class="tech-tag">Monitoring</span>
+            <span class="tech-tag">Apache Airflow</span>
+            <span class="tech-tag">MLflow</span>
+            <span class="tech-tag">Docker & k3s</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">React (TS)</span>
           </div>
           <div class="project-links">
-            <a href="https://chainy.luichu.dev">🌐 Live Demo</a>
-            <a href="https://github.com/ChuLiYu/chainy-backend">📁 GitHub Repo</a>
+            <a href="https://alphapulse.luichu.dev/">🌐 Live Demo</a>
+            <a href="https://github.com/ChuLiYu/alphapulse-mlops-platform">📁 GitHub Repo</a>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-header">
-            <div>
-              <h3 class="project-title">Raft-Recovery | Distributed System Fault Tolerance</h3>
-            </div>
-            <span class="project-status-building">Phase 1 Complete</span>
+            <h3 class="project-title">Raft-Recovery | Distributed Systems</h3>
           </div>
           <p class="project-description">
-            <strong>Distributed job orchestration system</strong> engineered in Go. Focuses on system reliability and
-            data consistency in distributed environments. Implements Write-Ahead Log (WAL) for crash recovery,
-            ensuring that critical processing jobs survive node failures—a crucial requirement for financial
-            data processing pipelines.
+            Distributed job orchestration system with <strong>Raft consensus</strong> and <strong>Write-Ahead Logging (WAL)</strong>. 
+            Ensures 100% crash recovery for critical financial processing tasks, built from scratch in Go.
           </p>
           <div class="project-tech">
             <span class="tech-tag">Go</span>
+            <span class="tech-tag">Raft Algorithm</span>
+            <span class="tech-tag">WAL</span>
             <span class="tech-tag">Distributed Systems</span>
-            <span class="tech-tag">Data Consistency</span>
-            <span class="tech-tag">WAL Recovery</span>
-            <span class="tech-tag">Concurrency</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ChuLiYu/raft-recovery">📚 Documentation</a>
             <a href="https://github.com/ChuLiYu/raft-recovery">📁 GitHub Repo</a>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-header">
-            <div>
-              <h3 class="project-title">MLOps & Data Pipeline Automation</h3>
-            </div>
-            <span class="project-status-building">In Progress</span>
+            <h3 class="project-title">Chainy | Serverless Inference</h3>
           </div>
           <p class="project-description">
-            <strong>End-to-end data and model lifecycle automation</strong>. Building automated pipelines with
-            DVC for data versioning (treating data as code), MLflow for tracking, and automated testing for
-            both data quality and model performance. Deploys using AWS Lambda with Terraform. Focuses on
-            reproducibility and auditability of data flows.
+            Scalable ML inference platform using <strong>AWS Lambda</strong> and <strong>DynamoDB</strong>. 
+            Managed via Terraform with isolated Dev/Staging/Prod environments and <100ms p95 latency.
           </p>
           <div class="project-tech">
-            <span class="tech-tag">DVC (Data Versioning)</span>
-            <span class="tech-tag">MLflow</span>
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">Data Quality</span>
-            <span class="tech-tag">Automation</span>
+            <span class="tech-tag">AWS Lambda</span>
+            <span class="tech-tag">DynamoDB</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">Serverless</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/ChuLiYu/mlops-pipeline">📚 Documentation (Coming Soon)</a>
+            <a href="https://github.com/ChuLiYu/chainy-backend">📁 GitHub Repo</a>
           </div>
         </div>
-      </div>
 
-      <!-- Infrastructure Code Block -->
-      <div class="code-block">
-        <div class="comment"># Financial Data Infrastructure (IaC)</div>
-        <div class="keyword">resource</div> <span class="string">"aws_db_instance" "financial_ledger"</span> {
-        <div class="comment"> # High-availability RDS for transaction data</div>
-        <div class="keyword"> engine</div> = <span class="string">"postgres"</span>
-        <div class="keyword"> instance_class</div> = <span class="string">"db.t3.medium"</span>
-        <div class="keyword"> multi_az</div> = <span class="string">true</span>
-        <div class="comment"># Ensure redundancy</div>
-        <div class="keyword"> backup_retention_period</div> = <span class="string">30</span>
-        }
-        <br>
-        <div class="keyword">resource</div> <span class="string">"aws_lambda_function" "etl_processor"</span> {
-        <div class="comment"> # Serverless ETL for daily reports</div>
-        <div class="keyword"> function_name</div> = <span class="string">"daily-reconciliation-job"</span>
-        <div class="keyword"> runtime</div> = <span class="string">"python3.11"</span>
-        <div class="keyword"> timeout</div> = <span class="string">900</span>
-        <div class="keyword"> environment</div> = {
-        <div class="keyword"> DB_HOST</div> = <span class="string">aws_db_instance.financial_ledger.address</span>
-        }
-        }
-        <br>
-        <div class="comment"># Monitoring: CloudWatch Alarms for Latency & Error Rate</div>
       </div>
     </div>
   </section>
@@ -722,161 +560,24 @@
   <!-- Skills Section -->
   <section id="skills" class="section">
     <div class="container">
-      <h2 class="section-title">Technical Expertise</h2>
-      <p class="section-subtitle">
-        Data Engineering • Fintech Systems • Cloud Infrastructure • MLOps
-      </p>
-
+      <h2 class="section-title">Technical Matrix</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3>📊 Data Engineering & Backend</h3>
+          <h3>📊 Data & Backend</h3>
           <div class="skill-items">
-            <span class="skill-item">Python (Pandas, NumPy, FastAPI)</span>
-            <span class="skill-item">SQL & Database Optimization (PostgreSQL, MySQL)</span>
-            <span class="skill-item">ETL Pipeline Design</span>
-            <span class="skill-item">Microservices Architecture</span>
-            <span class="skill-item">Go (Concurrency, High Performance)</span>
-            <span class="skill-item">Message Queues (Kafka, RabbitMQ)</span>
+            <span class="skill-item">Python 3.12 (FastAPI, Pydantic v2)</span>
+            <span class="skill-item">SQLAlchemy & PostgreSQL</span>
+            <span class="skill-item">Go (High-Performance Systems)</span>
+            <span class="skill-item">Apache Airflow</span>
           </div>
         </div>
-
         <div class="skill-category">
-          <h3>☁️ Cloud & DevOps</h3>
+          <h3>☁️ MLOps & Infra</h3>
           <div class="skill-items">
-            <span class="skill-item">AWS (Lambda, RDS, DynamoDB, S3, EC2)</span>
+            <span class="skill-item">MLflow & DVC</span>
             <span class="skill-item">Terraform (IaC)</span>
-            <span class="skill-item">Docker & Kubernetes</span>
-            <span class="skill-item">CI/CD (GitHub Actions)</span>
-            <span class="skill-item">Serverless Architecture</span>
-            <span class="skill-item">High Availability (HA) Design</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>🤖 MLOps & Data Science</h3>
-          <div class="skill-items">
-            <span class="skill-item">Model Deployment & Serving</span>
-            <span class="skill-item">MLflow (Tracking & Registry)</span>
-            <span class="skill-item">Data Versioning (DVC)</span>
-            <span class="skill-item">Drift Detection</span>
-            <span class="skill-item">Reproducible ML Pipelines</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>🏆 Certifications</h3>
-          <div class="skill-items">
-            <span class="skill-item">✅ AWS Solutions Architect – Associate (In Prep)</span>
-            <span class="skill-item">✅ HashiCorp Terraform Associate</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="section">
-    <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-      <p class="section-subtitle">
-        Building scalable backend systems and financial infrastructure
-      </p>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <div>
-              <h3 class="project-title">HiTrust, Inc. | Software Engineer (Backend/Data)</h3>
-            </div>
-            <span class="project-status-building">Jan 2023 – Dec 2024</span>
-          </div>
-          <p class="project-description">
-            <strong>Fintech & Data Infrastructure Focus:</strong><br>
-            • Developed secure microservices for a financial transaction system handling millions of requests, ensuring
-            <strong>ACID compliance</strong> and high availability.<br>
-            • <strong>Optimized complex SQL queries</strong> and backend logic for large-scale financial reporting,
-            reducing generation time by 30%.<br>
-            • Orchestrated containerized deployments on Kubernetes, managing resource allocation for production
-            workloads.<br>
-            • Designed robust data validation layers to ensure integrity of transaction data.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Fintech</span>
-            <span class="tech-tag">Data Engineering</span>
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">High Availability</span>
-            <span class="tech-tag">Performance Tuning</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div>
-              <h3 class="project-title">Astra Technology | Product Planner (Data & ML Focus)</h3>
-            </div>
-            <span class="project-status-building">Oct 2018 – Dec 2019</span>
-          </div>
-          <p class="project-description">
-            • Utilized Python (Pandas) to process internal datasets and build time-series prediction models to forecast
-            user behavior patterns.<br>
-            • Collaborated with engineering teams to launch a Proof of Concept (PoC) for an AI-driven Computer Vision
-            project (NTT Japan).<br>
-            • Defined technical requirements for ML model deployment and integration with production systems.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Data Analysis</span>
-            <span class="tech-tag">ML Models</span>
-            <span class="tech-tag">PoC Development</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="section">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <div>
-              <h3 class="project-title">Fairleigh Dickinson University</h3>
-            </div>
-            <span class="project-status-live">2025 – 2027</span>
-          </div>
-          <p class="project-description">
-            <strong>M.S. in Applied Computer Science</strong><br><br>
-            Relevant Coursework:<br>
-            • Artificial Intelligence (Python)<br>
-            • Advanced Topics in Operating Systems (Go)<br>
-            • Systems Programming (C)
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">AI/ML</span>
-            <span class="tech-tag">Operating Systems</span>
-            <span class="tech-tag">Systems Programming</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div>
-              <h3 class="project-title">Institute for Information Industry</h3>
-            </div>
-            <span class="project-status-building">2017 – 2018</span>
-          </div>
-          <p class="project-description">
-            <strong>Big Data Analytics Bootcamp</strong><br><br>
-            Intensive training in data analytics, machine learning, and big data technologies.<br>
-            Hands-on projects with real-world datasets and ML model development.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Big Data</span>
-            <span class="tech-tag">Data Analytics</span>
-            <span class="tech-tag">Machine Learning</span>
+            <span class="skill-item">Docker & Kubernetes (k3s)</span>
+            <span class="skill-item">Oracle Cloud & AWS</span>
           </div>
         </div>
       </div>
@@ -886,27 +587,11 @@
   <!-- Contact Section -->
   <section id="contact" class="section">
     <div class="container">
-      <div class="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <p class="section-subtitle">
-          Actively seeking Data Engineer and ML Infrastructure roles in Vancouver, BC | Open to remote opportunities
-        </p>
-
-        <div class="contact-links">
-          <a href="mailto:liyu.chu.work@gmail.com?subject=Portfolio Inquiry&body=Hi Lui,%0D%0A%0D%0AI'm interested in discussing..."
-            class="contact-link">
-            <span>📧</span>
-            <span>Email</span>
-          </a>
-          <a href="https://github.com/ChuLiYu" class="contact-link">
-            <span>🐙</span>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/chuliyu/" class="contact-link">
-            <span>💼</span>
-            <span>LinkedIn</span>
-          </a>
-        </div>
+      <h2 class="section-title">Connect</h2>
+      <p class="section-subtitle">Seeking Data Engineer & MLOps roles in Vancouver, BC</p>
+      <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+        <a href="mailto:liyu.chu.work@gmail.com" class="btn btn-primary">Email</a>
+        <a href="https://linkedin.com/in/chuliyu" class="btn btn-secondary">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -914,7 +599,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Li-Yu Chu | Data Engineer & MLOps Practitioner | Vancouver, BC</p>
+      <p>&copy; 2025 LiYu Chu | Data Engineer & MLOps Practitioner | Vancouver, BC</p>
     </div>
   </footer>
 </body>
