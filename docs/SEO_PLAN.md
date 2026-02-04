@@ -17,7 +17,7 @@
 
 | 標籤項目 | 設定內容 (範例) | 原因 |
 | :--- | :--- | :--- |
-| **Title Tag** | `Lui Chu — Data Engineer (Fintech) & MLOps` | 這是搜尋結果最顯眼的標題。將 Data Engineer 放在最前面強調主力。 |
+| **Title Tag** | `LiYu Chu — Data Engineer (Fintech) & MLOps` | 這是搜尋結果最顯眼的標題。將 Data Engineer 放在最前面強調主力。 |
 | **Meta Description** | "Data Engineer specializing in Fintech systems, high-concurrency data pipelines, and MLOps infrastructure. Experienced in AWS, ETL, and financial reporting optimization." | 這是標題下方的兩行文字。加入 Fintech, ETL, AWS 等關鍵字能提升點擊率。 |
 | **Meta Keywords** | `Data Engineer, Fintech, MLOps, AWS, ETL, Python, HiTrust` | 輔助標籤，定義核心技能。 |
 | **Canonical URL** | `https://luichu.dev/` | 告訴搜尋引擎這是「正版」網址，避免權重被參數網址稀釋。 |
