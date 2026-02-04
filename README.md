@@ -1,15 +1,14 @@
-# 🚀 MLOps Engineer Portfolio
+# Lui Chu | Data Engineer (Fintech) & MLOps
 
 <div align="center">
 
-### Production-Grade ML Infrastructure & System Design
+### Scalable Data Systems & Machine Learning Infrastructure
 
 [![Website](https://img.shields.io/badge/🌐_Portfolio-luichu.dev-4285F4?style=for-the-badge)](https://luichu.dev/)
-[![MLOps](https://img.shields.io/badge/MLOps-Engineer-blue?style=for-the-badge&logo=mlflow)](https://github.com/ChuLiYu/mlops-portfolio)
 [![AWS](https://img.shields.io/badge/AWS-Certified-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/certification/)
 [![Terraform](https://img.shields.io/badge/Terraform-Associate-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)](https://www.hashicorp.com/certification/terraform-associate)
 
-**Location:** Vancouver, BC 🇨🇦 | **Status:** Open to MLOps & ML Infrastructure opportunities
+**Location:** Vancouver, BC 🇨🇦 | **Status:** Open to Data Engineering & ML Infrastructure opportunities
 
 [📧 Contact](mailto:liyu.chu.work@gmail.com) • [💼 LinkedIn](https://linkedin.com/in/chuliyu) • [🔗 GitHub](https://github.com/ChuLiYu)
 
@@ -19,36 +18,37 @@
 
 ## 💡 Executive Summary
 
-**Senior MLOps Engineer** with 2+ years of production experience building scalable ML infrastructure. Expertise in serverless architecture, distributed systems, and Infrastructure as Code. Track record of deploying live production systems with measurable business impact.
+**Senior Data Engineer** with specialized experience in **Fintech systems**, high-concurrency architecture, and **MLOps**. Expertise in architecting resilient backend systems that bridge the gap between rigorous data engineering and scalable machine learning production. Track record of delivering production-grade infrastructure with measurable business ROI.
 
-### 🎯 Core Competencies
+### 🎯 Core Value Proposition
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  ML Infrastructure    │  Cloud & DevOps     │  Systems Design   │
+│  Data Engineering     │  Fintech Reliability│  ML Infrastructure│
 ├───────────────────────┼─────────────────────┼───────────────────┤
-│  • Model Serving      │  • AWS (Lambda, S3) │  • Distributed    │
-│  • ML Pipelines       │  • Terraform/IaC    │  • Fault Tolerant │
-│  • Feature Stores     │  • CI/CD Automation │  • High Available │
-│  • Model Monitoring   │  • Cost Optimization│  • Scalable APIs  │
+│  • ETL Pipelines      │  • ACID Compliance  │  • Model Serving  │
+│  • Query Optimization │  • High Concurrency │  • Pipeline Auto  │
+│  • Data Modeling      │  • Fault Tolerance  │  • Reproducibility│
+│  • Real-time Stream   │  • Financial Audit  │  • Monitoring     │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 📊 Portfolio Highlights
+### 📊 Quantifiable Engineering Metrics (ROI)
 
-| **Metric** | **Achievement** | **Business Value** |
-|------------|----------------|-------------------|
-| 🚀 **Inference Latency** | <100ms (p95) | Real-time user experience |
-| 📈 **Scalability** | 0→1000+ req/s | Auto-scaling without ops intervention |
-| 💰 **Cost Efficiency** | $0/month hosting | 100% cloud cost reduction |
-| 🛡️ **Reliability** | 100% crash recovery | Zero data loss guarantee |
-| ⚡ **Performance** | 30% improvement | Faster business report generation |
+| **Metric**             | **Achievement**    | **Business & Technical Value**                                              |
+| ---------------------- | ------------------ | --------------------------------------------------------------------------- |
+| ⚡ **Performance**     | **30% Faster**     | Optimized complex SQL/ETL for financial reports (HiTrust Inc.)              |
+| 🛡️ **Reliability**     | **100% Recovery**  | Implemented WAL (Write-Ahead Log) for distributed system fault tolerance    |
+| 🚀 **Latency**         | **<100ms (p95)**   | Optimized serverless inference cold-starts for real-time APIs               |
+| 💰 **Cost Efficiency** | **100% Saving**    | Migrated infrastructure to Oracle Cloud free-tier ($0/month hosting)        |
+| 📈 **Scalability**     | **0 → 1000+ RPS**  | Architected event-driven systems that scale elastically with zero idle cost |
+| 🧪 **Data Integrity**  | **Zero-Error SLA** | Guaranteed transaction consistency in payment systems (ACID compliance)     |
 
 ---
 
-## 🎯 Why This Portfolio Stands Out
+## 🎯 Professional Focus
 
-**Production-Ready MLOps Infrastructure** built from the ground up, showcasing end-to-end ML system design, deployment, and operations.
+This portfolio showcases production-grade infrastructure and data systems built with a focus on reliability, scalability, and financial-grade precision.
 
 ### ✅ Technical Excellence
 
@@ -57,6 +57,7 @@
 <td width="50%">
 
 **🏗️ Production Systems**
+
 - ✅ Live serverless ML inference (<100ms)
 - ✅ Distributed training orchestration
 - ✅ Multi-environment IaC (dev/staging/prod)
@@ -66,6 +67,7 @@
 <td width="50%">
 
 **💼 Business Impact**
+
 - 🚀 Real production systems (not demos)
 - 💰 Cost-optimized architecture ($0/month)
 - 📊 Quantifiable results (30% improvements)
@@ -78,6 +80,7 @@
 ### 🎓 For Recruiters & Hiring Managers
 
 > **This portfolio demonstrates:**
+>
 > - ✨ **Production experience** – Systems handling real traffic with SLAs
 > - 🏆 **Business acumen** – Cost optimization and measurable ROI
 > - 🧠 **System design skills** – Scalable, fault-tolerant architectures
@@ -102,9 +105,11 @@
 **Enterprise-grade serverless ML inference platform** for deploying models at scale with guaranteed SLAs.
 
 #### 🎯 Business Problem Solved
+
 Traditional ML model serving requires expensive 24/7 server infrastructure. This platform delivers **99.9% uptime** with **zero idle costs** using event-driven architecture.
 
 #### 🏗️ System Architecture
+
 ```
 ┌─────────────┐      ┌──────────────┐      ┌─────────────┐
 │   Client    │─────▶│  API Gateway │─────▶│   Lambda    │
@@ -132,6 +137,7 @@ Traditional ML model serving requires expensive 24/7 server infrastructure. This
 <summary><b>Click to expand technical details</b></summary>
 
 **Infrastructure as Code:**
+
 ```hcl
 # Multi-environment with Terraform
 terraform workspace select prod
@@ -139,6 +145,7 @@ terraform apply -var-file="prod.tfvars"
 ```
 
 **API Design:**
+
 ```python
 # FastAPI with async inference
 @app.post("/predict")
@@ -149,6 +156,7 @@ async def predict(features: ModelInput):
 ```
 
 **Cold Start Optimization:**
+
 - Provisioned concurrency for critical endpoints
 - Model loaded at container init (not per-request)
 - Lambda layers for shared dependencies
@@ -174,6 +182,7 @@ async def predict(features: ModelInput):
 **High-concurrency distributed job scheduler** built in Go with Raft consensus algorithm, ensuring fault tolerance and data consistency for critical workloads.
 
 #### 🎯 Business Problem Solved
+
 Critical backend systems require **zero data loss** and **high availability** even during node failures. This scheduler provides **100% job recovery** using Write-Ahead Logging and distributed consensus, ensuring business continuity for mission-critical workloads.
 
 #### 🏗️ System Architecture
@@ -214,6 +223,7 @@ Critical backend systems require **zero data loss** and **high availability** ev
 <summary><b>Click to expand technical details</b></summary>
 
 **Use Case Example:**
+
 ```go
 // Submit batch jobs with guaranteed execution
 jobs := []Job{
@@ -228,12 +238,14 @@ scheduler.SubmitBatch(jobs)  // Distributed across workers
 ```
 
 **Write-Ahead Log (WAL) Security:**
+
 - Every operation logged atomically before execution
 - Crash recovery: replay WAL to restore exact system state
 - fsync guarantees for durability (no data loss)
 - Periodic snapshots reduce recovery time
 
 **Raft Consensus for High Availability:**
+
 - Leader coordinates all job scheduling decisions
 - Followers maintain replicated logs for redundancy
 - Automatic leader election on failure (2-3s downtime)
@@ -241,7 +253,8 @@ scheduler.SubmitBatch(jobs)  // Distributed across workers
 
 </details>
 
-**Real-World Applications**: 
+**Real-World Applications**:
+
 - **Financial Systems**: Critical transaction processing with zero data loss
 - **Batch ETL Pipelines**: Large-scale data processing with fault tolerance
 - **Report Generation**: Scheduled jobs requiring guaranteed execution
@@ -254,7 +267,7 @@ scheduler.SubmitBatch(jobs)  // Distributed across workers
 
 ---
 
-### 3. 🔬 End-to-End MLOps Pipeline *(Upcoming - 2 Week Sprint)*
+### 3. 🔬 End-to-End MLOps Pipeline _(Upcoming - 2 Week Sprint)_
 
 <div align="center">
 
@@ -296,12 +309,14 @@ scheduler.SubmitBatch(jobs)  // Distributed across workers
 
 **MLOps Tools**: MLflow, DVC, Great Expectations  
 **Deployment**: AWS Lambda, Terraform, GitHub Actions  
-**Monitoring**: CloudWatch, custom metrics, drift detection algorithms  
+**Monitoring**: CloudWatch, custom metrics, drift detection algorithms
 
 **📅 Timeline**: Active development (Completion: Mid-January 2026)
 
 ---
+
                         Model Monitoring (Drift Detection)
+
 ```
 
 **Planned Features:**
@@ -311,7 +326,7 @@ scheduler.SubmitBatch(jobs)  // Distributed across workers
 - 🚀 **Lambda deployment**: Automated model serving with Terraform
 - 📈 **Drift detection**: Monitor model performance in production
 
-**Tech Stack**: MLflow, DVC, FastAPI, AWS Lambda, Terraform, GitHub Actions  
+**Tech Stack**: MLflow, DVC, FastAPI, AWS Lambda, Terraform, GitHub Actions
 **Status**: Active development (2-week timeline)
 
 
@@ -397,27 +412,29 @@ scheduler.SubmitBatch(jobs)  // Distributed across workers
 **This portfolio itself demonstrates MLOps best practices:**
 
 ```
+
 ┌─────────────────────────────────────────────┐
-│      luichu.dev (Cloudflare DNS)            │
-│         Terraform-managed Records            │
+│ luichu.dev (Cloudflare DNS) │
+│ Terraform-managed Records │
 └────────────────┬────────────────────────────┘
-                 │
-                 ▼
+│
+▼
 ┌─────────────────────────────────────────────┐
-│           GitHub Pages (Free CDN)           │
-│  • Static Site Hosting                      │
-│  • Automatic HTTPS                          │
-│  • Global CDN Distribution                  │
+│ GitHub Pages (Free CDN) │
+│ • Static Site Hosting │
+│ • Automatic HTTPS │
+│ • Global CDN Distribution │
 └────────────────▲────────────────────────────┘
-                 │
-                 │ Automated Deployment
-                 │
+│
+│ Automated Deployment
+│
 ┌────────────────┴────────────────────────────┐
-│          GitHub Actions CI/CD               │
-│  • Triggered on git push                    │
-│  • Build & validate                         │
-│  • Deploy to GitHub Pages                   │
+│ GitHub Actions CI/CD │
+│ • Triggered on git push │
+│ • Build & validate │
+│ • Deploy to GitHub Pages │
 └─────────────────────────────────────────────┘
+
 ```
 
 **Design Principles:**
@@ -458,20 +475,22 @@ scheduler.SubmitBatch(jobs)  // Distributed across workers
 ## 📁 Repository Structure
 
 ```
-mlops-portfolio/
-├── docs/                       # 📚 Documentation
-├── website/                    # 🌐 Portfolio Website
-│   ├── index.html              # Main portfolio (English)
-│   ├── index-zh.html           # Chinese version
-│   └── assets/                 # Images and resources
-├── infrastructure/             # ☁️ Infrastructure as Code
-│   └── cloudflare/             # Terraform DNS management
-├── .github/workflows/          # 🔄 CI/CD Pipeline
-│   └── deploy-pages.yml        # Automated deployment
-├── .gitignore                  # Security exclusions
-├── LICENSE                     # MIT License
-└── README.md                   # This file
-```
+
+liyu-portfolio/
+├── docs/ # 📚 Documentation
+├── website/ # 🌐 Portfolio Website
+│ ├── index.html # Main portfolio (English)
+│ ├── index-zh.html # Chinese version
+│ └── assets/ # Images and resources
+├── infrastructure/ # ☁️ Infrastructure as Code
+│ └── cloudflare/ # Terraform DNS management
+├── .github/workflows/ # 🔄 CI/CD Pipeline
+│ └── deploy-pages.yml # Automated deployment
+├── .gitignore # Security exclusions
+├── LICENSE # MIT License
+└── README.md # This file
+
+````
 
 ---
 
@@ -482,13 +501,14 @@ Visit: **[https://luichu.dev/](https://luichu.dev/)**
 
 ### Run Locally
 ```bash
-git clone https://github.com/ChuLiYu/mlops-portfolio.git
-cd mlops-portfolio/website
+git clone https://github.com/ChuLiYu/liyu-portfolio.git
+cd liyu-portfolio/website
 python3 -m http.server 8000
 # Visit http://localhost:8000
-```
+````
 
 ### Deploy Infrastructure
+
 ```bash
 cd infrastructure/cloudflare
 terraform init
@@ -501,10 +521,10 @@ terraform apply
 ## 🎓 Education
 
 **Fairleigh Dickinson University** – M.S. Applied Computer Science (2025-2027)  
-*Focus*: Artificial Intelligence, Advanced Operating Systems, Systems Programming
+_Focus_: Artificial Intelligence, Advanced Operating Systems, Systems Programming
 
 **Institute for Information Industry** – Big Data Analytics Bootcamp (2017-2018)  
-*Focus*: Data analytics, machine learning, big data technologies
+_Focus_: Data analytics, machine learning, big data technologies
 
 ---
 
